@@ -35,7 +35,20 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## AgriLink folder structure
+# FarmMart
+
+A modern agricultural marketplace connecting farmers directly with buyers.
+
+## Features
+
+- 🛒 Shopping cart and wishlist functionality
+- 👨‍🌾 Farmer dashboard for product management
+- 👔 Admin panel for system oversight
+- 📦 Order tracking and management
+- 🌾 Product showcase and filtering
+- 📱 Responsive design
+
+## FarmMart folder structure
 /node_modules/              # Auto-generated directory containing all project dependencies installed via npm.
 ├── public/
 │   ├── favicon.ico         # The website’s favicon, displayed in browser tabs.
