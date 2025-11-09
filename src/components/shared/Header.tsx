@@ -87,7 +87,7 @@ export default function Header() {
   };
 
   return (
-   <>
+    <>
       {/* Top Bar */}
       <div className="bg-green-50 border-b border-green-100 py-2 hidden lg:block w-full">
         <div className="px-10 flex justify-between items-center text-sm text-gray-600">
@@ -98,7 +98,7 @@ export default function Header() {
             </div>
             <div className="flex items-center space-x-2">
               <FiMail className="w-4 h-4 text-green-600" />
-              <span>info@agrilink.com</span>
+              <span>info@farmMart.com</span>
             </div>
           </div>
           <div className="text-green-700 font-medium">
@@ -116,17 +116,26 @@ export default function Header() {
               <BiLeaf className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-green-600">AgriLink</h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Fresh & Organic</p>
+              <h1 className="text-2xl font-bold text-green-600">farmMart</h1>
+              <p className="text-xs text-gray-500 hidden sm:block">
+                Fresh & Organic
+              </p>
             </div>
           </Link>
 
           {/* Desktop Nav - Hide when search is open */}
-          <nav className={`hidden lg:flex items-center space-x-8 relative z-50 transition-opacity duration-300 ${
-            isSearchOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}>
-            <Link href="/" className="text-gray-700 hover:text-green-600 font-medium">Home</Link>
-            {navItems.map((item) => (
+          <nav
+            className={`hidden lg:flex items-center space-x-8 relative z-50 transition-opacity duration-300 ${
+              isSearchOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-green-600 font-medium"
+            >
+              Home
+            </Link>
+            {navItems.map((item) =>
               item.href ? (
                 // Direct link for Projects
                 <Link
@@ -145,25 +154,33 @@ export default function Header() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <Link
-                    href={item.name === 'Products' ? '/products/all' : item.name === 'Services' ? '/services' : '/blog'}
+                    href={
+                      item.name === "Products"
+                        ? "/products/all"
+                        : item.name === "Services"
+                        ? "/services"
+                        : "/blog"
+                    }
                     className="flex items-center space-x-1 text-gray-700 hover:text-green-600 font-medium focus:outline-none"
                   >
                     <span>{item.name}</span>
                     <FiChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        openDropdown === item.key ? 'rotate-180' : ''
+                        openDropdown === item.key ? "rotate-180" : ""
                       }`}
                     />
                   </Link>
                   <div
                     className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl transition-all duration-500 ease-in-out transform ${
                       openDropdown === item.key
-                        ? 'translate-x-0 opacity-100 visible'
-                        : 'translate-x-10 opacity-0 invisible'
+                        ? "translate-x-0 opacity-100 visible"
+                        : "translate-x-10 opacity-0 invisible"
                     }`}
                   >
                     <div className="py-2">
-                      {dropdownMenus[item.key as keyof typeof dropdownMenus].map((link) => (
+                      {dropdownMenus[
+                        item.key as keyof typeof dropdownMenus
+                      ].map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
@@ -176,10 +193,20 @@ export default function Header() {
                   </div>
                 </div>
               )
-            ))}
+            )}
             {/* About Us as a single link */}
-            <Link href="/about-us" className="text-gray-700 hover:text-green-600 font-medium">About Us</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-green-600 font-medium">Contact</Link>
+            <Link
+              href="/about-us"
+              className="text-gray-700 hover:text-green-600 font-medium"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-green-600 font-medium"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Right Side */}
@@ -205,14 +232,14 @@ export default function Header() {
                     autoFocus
                     onBlur={() => {
                       if (!searchQuery) {
-                        setIsSearchOpen(false)
+                        setIsSearchOpen(false);
                       }
                     }}
                   />
                   <button
                     onClick={() => {
-                      setSearchQuery('')
-                      setIsSearchOpen(false)
+                      setSearchQuery("");
+                      setIsSearchOpen(false);
                     }}
                     className="ml-2 text-gray-400 hover:text-gray-600"
                   >
@@ -222,92 +249,92 @@ export default function Header() {
               )}
             </div>
 
-          {/* Wishlist */}
-          <Link
-            href="/wishlist"
-            className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
-          >
-            <FiHeart className="w-5 h-5" />
-            {isLoggedIn && wishlist.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {wishlist.length}
-              </span>
-            )}
-          </Link>
-
-          {/* Cart */}
-          <Link
-            href="/cart"
-            className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
-          >
-            <FiShoppingCart className="w-5 h-5" />
-            {state.totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {state.totalItems}
-              </span>
-            )}
-          </Link>
-
-          {/* Login/User */}
-          {isLoggedIn ? (
-            <div className="relative hidden md:block">
-              <button
-                className="flex items-center gap-2 focus:outline-none"
-                onClick={() => setShowUserMenu((v) => !v)}
-              >
-                <Image
-                  src={userPhoto || "/images/avatar.png"}
-                  alt="User"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 rounded-full object-cover border border-green-700"
-                />
-              </button>
-              {showUserMenu && (
-                <div className="absolute right-0 mt-2 w-40 bg-white rounded shadow-lg z-50">
-                  <Link
-                    href="/account"
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  >
-                    My Account
-                  </Link>
-                  <Link
-                    href="/order-history"
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  >
-                    Order History
-                  </Link>
-                  <button
-                    className="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
+            {/* Wishlist */}
             <Link
-              href="/login"
-              className="hidden md:block bg-green-600 text-white px-6 py-2.5 rounded-full hover:bg-green-700 font-semibold"
+              href="/wishlist"
+              className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
             >
-              Login
+              <FiHeart className="w-5 h-5" />
+              {isLoggedIn && wishlist.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {wishlist.length}
+                </span>
+              )}
             </Link>
-          )}
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <FiX className="w-6 h-6" />
+            {/* Cart */}
+            <Link
+              href="/cart"
+              className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+            >
+              <FiShoppingCart className="w-5 h-5" />
+              {state.totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {state.totalItems}
+                </span>
+              )}
+            </Link>
+
+            {/* Login/User */}
+            {isLoggedIn ? (
+              <div className="relative hidden md:block">
+                <button
+                  className="flex items-center gap-2 focus:outline-none"
+                  onClick={() => setShowUserMenu((v) => !v)}
+                >
+                  <Image
+                    src={userPhoto || "/images/avatar.png"}
+                    alt="User"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 rounded-full object-cover border border-green-700"
+                  />
+                </button>
+                {showUserMenu && (
+                  <div className="absolute right-0 mt-2 w-40 bg-white rounded shadow-lg z-50">
+                    <Link
+                      href="/account"
+                      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      My Account
+                    </Link>
+                    <Link
+                      href="/order-history"
+                      className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >
+                      Order History
+                    </Link>
+                    <button
+                      className="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
             ) : (
-              <FiMenu className="w-6 h-6" />
+              <Link
+                href="/login"
+                className="hidden md:block bg-green-600 text-white px-6 py-2.5 rounded-full hover:bg-green-700 font-semibold"
+              >
+                Login
+              </Link>
             )}
-          </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <FiX className="w-6 h-6" />
+              ) : (
+                <FiMenu className="w-6 h-6" />
+              )}
+            </button>
           </div>
-          </div>
+        </div>
       </header>
 
       {/* Mobile Search */}
