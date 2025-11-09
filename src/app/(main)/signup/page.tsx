@@ -70,7 +70,9 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
         className="border rounded px-3 py-2"
         {...register("name", { required: "Name is required" })}
       />
-      {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+      {errors.name && (
+        <p className="text-red-500 text-sm">{errors.name.message}</p>
+      )}
 
       {/* Email */}
       <label className="text-sm font-medium">Email</label>
@@ -85,7 +87,9 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
           },
         })}
       />
-      {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+      {errors.email && (
+        <p className="text-red-500 text-sm">{errors.email.message}</p>
+      )}
 
       {/* Password */}
       <label className="text-sm font-medium">Password</label>
@@ -95,7 +99,10 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
           className="border rounded px-3 py-2 w-full"
           {...register("password", {
             required: "Password is required",
-            minLength: { value: 6, message: "Password must be at least 6 characters" },
+            minLength: {
+              value: 6,
+              message: "Password must be at least 6 characters",
+            },
           })}
         />
         <button
@@ -103,10 +110,16 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
           onClick={() => setShowPassword(!showPassword)}
           className="absolute right-2 top-2 text-gray-600 hover:text-gray-900"
         >
-          {showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+          {showPassword ? (
+            <AiOutlineEyeInvisible size={20} />
+          ) : (
+            <AiOutlineEye size={20} />
+          )}
         </button>
       </div>
-      {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+      {errors.password && (
+        <p className="text-red-500 text-sm">{errors.password.message}</p>
+      )}
 
       {/* Confirm Password */}
       <label className="text-sm font-medium">Confirm Password</label>
@@ -124,7 +137,11 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
           onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           className="absolute right-2 top-2 text-gray-600 hover:text-gray-900"
         >
-          {showConfirmPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+          {showConfirmPassword ? (
+            <AiOutlineEyeInvisible size={20} />
+          ) : (
+            <AiOutlineEye size={20} />
+          )}
         </button>
       </div>
       {errors.confirmPassword && (
@@ -203,7 +220,9 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
         className="border rounded px-3 py-2"
         {...register("name", { required: "Full name is required" })}
       />
-      {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+      {errors.name && (
+        <p className="text-red-500 text-sm">{errors.name.message}</p>
+      )}
 
       {/* Email */}
       <label className="text-sm font-medium">Email</label>
@@ -218,7 +237,9 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
           },
         })}
       />
-      {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+      {errors.email && (
+        <p className="text-red-500 text-sm">{errors.email.message}</p>
+      )}
 
       {/* Password */}
       <label className="text-sm font-medium">Password</label>
@@ -228,7 +249,10 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
           className="border rounded px-3 py-2 w-full"
           {...register("password", {
             required: "Password is required",
-            minLength: { value: 6, message: "Password must be at least 6 characters" },
+            minLength: {
+              value: 6,
+              message: "Password must be at least 6 characters",
+            },
           })}
         />
         <button
@@ -236,10 +260,16 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
           onClick={() => setShowPassword(!showPassword)}
           className="absolute right-2 top-2 text-gray-600 hover:text-gray-900"
         >
-          {showPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+          {showPassword ? (
+            <AiOutlineEyeInvisible size={20} />
+          ) : (
+            <AiOutlineEye size={20} />
+          )}
         </button>
       </div>
-      {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+      {errors.password && (
+        <p className="text-red-500 text-sm">{errors.password.message}</p>
+      )}
 
       {/* Confirm Password */}
       <label className="text-sm font-medium">Confirm Password</label>
@@ -257,7 +287,11 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
           onClick={() => setShowConfirmPassword(!showConfirmPassword)}
           className="absolute right-2 top-2 text-gray-600 hover:text-gray-900"
         >
-          {showConfirmPassword ? <AiOutlineEyeInvisible size={20} /> : <AiOutlineEye size={20} />}
+          {showConfirmPassword ? (
+            <AiOutlineEyeInvisible size={20} />
+          ) : (
+            <AiOutlineEye size={20} />
+          )}
         </button>
       </div>
       {errors.confirmPassword && (
@@ -271,7 +305,9 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
         className="border rounded px-3 py-2"
         {...register("farmName", { required: "Farm name is required" })}
       />
-      {errors.farmName && <p className="text-red-500 text-sm">{errors.farmName.message}</p>}
+      {errors.farmName && (
+        <p className="text-red-500 text-sm">{errors.farmName.message}</p>
+      )}
 
       {/* Farm Location */}
       <label className="text-sm font-medium">Farm Location</label>
@@ -280,7 +316,9 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
         className="border rounded px-3 py-2"
         {...register("location", { required: "Farm location is required" })}
       />
-      {errors.location && <p className="text-red-500 text-sm">{errors.location.message}</p>}
+      {errors.location && (
+        <p className="text-red-500 text-sm">{errors.location.message}</p>
+      )}
 
       {/* Phone */}
       <label className="text-sm font-medium">Phone Number</label>
@@ -292,7 +330,9 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
           pattern: { value: /^[0-9]+$/, message: "Only numbers allowed" },
         })}
       />
-      {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+      {errors.phone && (
+        <p className="text-red-500 text-sm">{errors.phone.message}</p>
+      )}
 
       <div className="flex gap-2 mt-2">
         <button
@@ -344,7 +384,7 @@ export default function SignupPage() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-start">
       <Image
         src="/images/background.jpg"
-        alt="Agrilink"
+        alt="farmMart"
         width={1000}
         height={400}
         className="w-full h-64 object-cover mb-4"
@@ -361,7 +401,8 @@ export default function SignupPage() {
               &times;
             </button>
             <h2 className="text-2xl font-semibold mb-6 text-center">
-              Sign up for <span className="text-green-600 font-bold">Agrilink</span>
+              Sign up for{" "}
+              <span className="text-green-600 font-bold">farmMart</span>
             </h2>
             <div className="flex gap-6 justify-center">
               <button
