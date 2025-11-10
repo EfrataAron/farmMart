@@ -60,7 +60,7 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
       noValidate
     >
       <h2 className="text-2xl font-semibold mb-2">
-        Sign up as <span className="text-green-600 font-bold">Buyer</span>
+        Sign up as <span className="text-orange-600 font-bold">Buyer</span>
       </h2>
 
       {/* Name */}
@@ -158,7 +158,7 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
         </button>
         <button
           type="submit"
-          className="bg-green-600 text-white rounded py-2 px-4 font-semibold hover:bg-green-700 transition"
+          className="bg-orange-600 text-white rounded py-2 px-4 font-semibold hover:bg-orange-700 transition"
         >
           Signup
         </button>
@@ -166,7 +166,7 @@ function BuyerSignupForm({ onBack }: { onBack: () => void }) {
 
       <div className="text-center text-sm mt-2 mb-2">
         Have an account?{" "}
-        <Link href="/login" className="text-green-600 hover:underline">
+        <Link href="/login" className="text-orange-600 hover:underline">
           Sign in
         </Link>
       </div>
@@ -210,7 +210,7 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
       noValidate
     >
       <h2 className="text-2xl font-semibold mb-2">
-        Sign up as <span className="text-green-600 font-bold">Farmer</span>
+        Sign up as <span className="text-orange-600 font-bold">Farmer</span>
       </h2>
 
       {/* Name */}
@@ -344,7 +344,7 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
         </button>
         <button
           type="submit"
-          className="bg-green-600 text-white rounded py-2 px-4 font-semibold hover:bg-green-700 transition"
+          className="bg-orange-600 text-white rounded py-2 px-4 font-semibold hover:bg-orange-700 transition"
         >
           Signup
         </button>
@@ -352,7 +352,7 @@ function FarmerSignupForm({ onBack }: { onBack: () => void }) {
 
       <div className="text-center text-sm mt-2 mb-2">
         Have an account?{" "}
-        <Link href="/login" className="text-green-600 hover:underline">
+        <Link href="/login" className="text-orange-600 hover:underline">
           Sign in
         </Link>
       </div>
@@ -402,17 +402,17 @@ export default function SignupPage() {
             </button>
             <h2 className="text-2xl font-semibold mb-6 text-center">
               Sign up for{" "}
-              <span className="text-green-600 font-bold">farmMart</span>
+              <span className="text-orange-600 font-bold">farmMart</span>
             </h2>
             <div className="flex gap-6 justify-center">
               <button
-                className="bg-green-600 text-white rounded px-8 py-4 font-bold text-lg hover:bg-green-700 transition"
+                className="bg-orange-600 text-white rounded px-8 py-4 font-bold text-lg hover:bg-orange-700 transition"
                 onClick={() => handleSelect("buyer")}
               >
                 Sign up as Buyer
               </button>
               <button
-                className="bg-green-600 text-white rounded px-8 py-4 font-bold text-lg hover:bg-green-700 transition"
+                className="bg-orange-600 text-white rounded px-8 py-4 font-bold text-lg hover:bg-orange-700 transition"
                 onClick={() => handleSelect("farmer")}
               >
                 Sign up as Farmer
@@ -427,3 +427,4 @@ export default function SignupPage() {
     </div>
   );
 }
+

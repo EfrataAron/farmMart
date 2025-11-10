@@ -53,7 +53,7 @@ export default function CartPage() {
           <p className="text-gray-500 mb-6">Add some products to get started!</p>
           <Link
             href="/"
-            className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+            className="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition"
           >
             Continue Shopping
           </Link>
@@ -113,7 +113,7 @@ export default function CartPage() {
                       <h3 className="text-lg font-medium text-gray-900 mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-green-600 font-semibold">
+                      <p className="text-orange-600 font-semibold">
                         UGX {item.price.toLocaleString()}/{item.unit}
                       </p>
                     </div>
@@ -179,7 +179,7 @@ export default function CartPage() {
               <div className="border-t pt-3">
                 <div className="flex justify-between text-lg font-semibold">
                   <span>Total</span>
-                  <span className="text-green-600">
+                  <span className="text-orange-600">
                     UGX {(state.totalPrice + 2000).toLocaleString()}
                   </span>
                 </div>
@@ -196,22 +196,22 @@ export default function CartPage() {
                     setIsCheckoutModalOpen(true);
                   }
                 }}
-                className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold"
+                className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition font-semibold"
               >
                 Proceed to Checkout
               </button>
               <Link
                 href="/"
-                className="block w-full text-center border border-green-600 text-green-600 py-3 rounded-lg hover:bg-green-50 transition font-semibold"
+                className="block w-full text-center border border-orange-600 text-orange-600 py-3 rounded-lg hover:bg-orange-50 transition font-semibold"
               >
                 Continue Shopping
               </Link>
             </div>
 
             {/* Delivery Info */}
-            <div className="mt-6 p-4 bg-green-50 rounded-lg">
-              <h3 className="font-medium text-green-800 mb-2">Delivery Information</h3>
-              <ul className="text-sm text-green-700 space-y-1">
+            <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+              <h3 className="font-medium text-orange-800 mb-2">Delivery Information</h3>
+              <ul className="text-sm text-orange-700 space-y-1">
                 <li>• Free delivery on orders over UGX 50,000</li>
                 <li>• Standard delivery: 1-3 business days</li>
                 <li>• Fresh products guaranteed</li>
@@ -229,3 +229,5 @@ export default function CartPage() {
     </div>
   )
 }
+
+

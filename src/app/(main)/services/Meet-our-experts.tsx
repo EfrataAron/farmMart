@@ -53,12 +53,12 @@ export default function MeetOurExperts({ service = 'consultation' }: MeetOurExpe
   const experts = expertsByService[service] || expertsByService['consultation'];
   return (
     <section className="mb-8">
-      <h2 className="text-2xl font-semibold text-green-600 mb-2">Meet Our Experts</h2>
+      <h2 className="text-2xl font-semibold text-orange-600 mb-2">Meet Our Experts</h2>
       <div className="flex flex-wrap gap-6">
         {experts.map((exp) => (
           <div key={exp.name} className="flex flex-col items-center bg-white rounded shadow p-4 w-48">
-            <Image src={exp.image} alt={exp.name} width={80} height={80} className="w-20 h-20 rounded-full object-cover mb-2 border-2 border-green-200" />
-            <div className="font-semibold text-green-700 text-base text-center">{exp.name}</div>
+            <Image src={exp.image} alt={exp.name} width={80} height={80} className="w-20 h-20 rounded-full object-cover mb-2 border-2 border-orange-200" />
+            <div className="font-semibold text-orange-700 text-base text-center">{exp.name}</div>
             <div className="text-gray-600 text-sm text-center">{exp.specialty}</div>
           </div>
         ))}

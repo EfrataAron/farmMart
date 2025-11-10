@@ -45,7 +45,7 @@ export default function CropPlanningPage() {
     <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-10 xl:px-16">
       <ServiceFilterBar />
      
-      <h1 className="text-4xl font-bold text-green-700 mb-4">Crop Planning</h1>
+      <h1 className="text-4xl font-bold text-orange-700 mb-4">Crop Planning</h1>
       <p className="text-gray-700 mb-6">
         Our crop planning experts work with you to develop a custom plan that fits your land, climate, and market needs. We help you optimize crop rotation, resource use, and profitability.
       </p>
@@ -64,7 +64,7 @@ export default function CropPlanningPage() {
           />
           {/* Why Use Our Crop Planning Service section directly below image */}
           <section className="mt-4 w-full">
-            <h2 className="text-2xl font-semibold text-green-600 mb-2">Why Use Our Crop Planning Service?</h2>
+            <h2 className="text-2xl font-semibold text-orange-600 mb-2">Why Use Our Crop Planning Service?</h2>
             <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
               <li>Maximize land productivity and profitability</li>
               <li>Reduce risk of crop failure and market fluctuations</li>
@@ -77,7 +77,7 @@ export default function CropPlanningPage() {
         {/* Right: How It Works and Get Started Form */}
         <div className="flex-1">
           <section className="mb-6">
-            <h2 className="text-2xl font-semibold text-green-600 mb-2">How It Works</h2>
+            <h2 className="text-2xl font-semibold text-orange-600 mb-2">How It Works</h2>
             <ol className="list-decimal list-inside text-gray-700 space-y-1">
               <li>Request crop planning using the form below</li>
               <li>We assess your farm and goals</li>
@@ -85,7 +85,7 @@ export default function CropPlanningPage() {
               <li>Get follow-up support and monitoring</li>
             </ol>
           </section>
-          <h2 className="text-2xl font-semibold text-green-600 mb-2">Get Started</h2>
+          <h2 className="text-2xl font-semibold text-orange-600 mb-2">Get Started</h2>
           <p className="text-gray-700 mb-4">
             Fill out the form below and our crop planning experts will contact you to discuss your needs.
           </p>
@@ -102,7 +102,7 @@ export default function CropPlanningPage() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-orange-600 focus:border-orange-600"
                 />
               </div>
               <div>
@@ -116,7 +116,7 @@ export default function CropPlanningPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-orange-600 focus:border-orange-600"
                 />
               </div>
               <div>
@@ -130,18 +130,18 @@ export default function CropPlanningPage() {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 p-2 text-sm w-full border border-gray-300 rounded-md focus:ring-orange-600 focus:border-orange-600"
                 />
               </div>
               <button
                 type="submit"
-                className="bg-green-600 text-white px-4 py-2 text-sm rounded-full hover:bg-green-700"
+                className="bg-orange-600 text-white px-4 py-2 text-sm rounded-full hover:bg-orange-700"
               >
                 Send Request
               </button>
             </form>
           ) : (
-            <div className="p-6 bg-green-50 border border-green-200 rounded-md text-green-800">
+            <div className="p-6 bg-orange-50 border border-orange-200 rounded-md text-orange-800">
               ✅ Thank you! Your request has been sent. We’ll get back to you soon.
             </div>
           )}
@@ -153,7 +153,7 @@ export default function CropPlanningPage() {
       </div>
       {/* FAQ Section */}
       <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-green-600 mb-4">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-semibold text-orange-600 mb-4">Frequently Asked Questions</h2>
         <div className="bg-[#f9f6f1] rounded-xl p-4 md:p-6 w-full shadow">
           {faqs.map((faq, idx) => (
             <div key={idx} className="border-b last:border-b-0 border-gray-200">
@@ -164,7 +164,7 @@ export default function CropPlanningPage() {
                 aria-expanded={openFaq === idx}
                 aria-controls={`faq-answer-${idx}`}
               >
-                <span className={`font-semibold ${openFaq === idx ? 'text-green-700' : 'text-gray-900'}`}>{faq.q}</span>
+                <span className={`font-semibold ${openFaq === idx ? 'text-orange-700' : 'text-gray-900'}`}>{faq.q}</span>
                 <span className="text-2xl font-bold text-gray-400 ml-4">
                   {openFaq === idx ? '–' : '+'}
                 </span>
@@ -184,3 +184,4 @@ export default function CropPlanningPage() {
     </main>
   );
 }
+

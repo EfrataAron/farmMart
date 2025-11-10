@@ -374,8 +374,6 @@ const topBuyers: BuyerAnalytics[] = [
 ];
 
 export default function ReportsPage() {
-  const [timeRange, setTimeRange] = useState<string>("last_7_days");
-  const [reportType, setReportType] = useState<string>("overview");
   const [isOpen, setIsOpen] = useState(false);
   const closeSidebar = () => setIsOpen(false);
 
@@ -414,39 +412,7 @@ export default function ReportsPage() {
                 Platform performance and user insights
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 shrink-0">
-              <div className="relative">
-                <select
-                  value={timeRange}
-                  onChange={(e) => setTimeRange(e.target.value)}
-                  className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white pr-8"
-                >
-                  <option value="last_7_days">Last 7 Days</option>
-                  <option value="last_30_days">Last 30 Days</option>
-                  <option value="last_6_months">Last 6 Months</option>
-                  <option value="last_year">Last Year</option>
-                </select>
-                <FiChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-              </div>
-              <div className="relative">
-                <select
-                  value={reportType}
-                  onChange={(e) => setReportType(e.target.value)}
-                  className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white pr-8"
-                >
-                  <option value="overview">Overview</option>
-                  <option value="products">Products</option>
-                  <option value="orders">Orders</option>
-                  <option value="revenue">Revenue</option>
-                </select>
-                <FiChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-              </div>
-              <button className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                <FiDownload className="w-4 h-4" />
-                <span className="hidden sm:inline">Export Report</span>
-                <span className="sm:hidden">Export</span>
-              </button>
-            </div>
+
           </div>
 
           {/* Key Metrics Dashboard */}
@@ -458,15 +424,15 @@ export default function ReportsPage() {
                   <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 truncate">
                     {platformMetrics.totalProducts.toLocaleString()}
                   </p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-orange-600 flex items-center gap-1">
                     <FiTrendingUp className="w-3 h-3 shrink-0" />
                     <span className="truncate">
                       {formatPercentage(platformMetrics.productGrowth)}
                     </span>
                   </p>
                 </div>
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0 ml-3">
-                  <FiPackage className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center shrink-0 ml-3">
+                  <FiPackage className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                 </div>
               </div>
             </div>
@@ -477,7 +443,7 @@ export default function ReportsPage() {
                   <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 truncate">
                     {platformMetrics.totalOrders.toLocaleString()}
                   </p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-orange-600 flex items-center gap-1">
                     <FiTrendingUp className="w-3 h-3 shrink-0" />
                     <span className="truncate">
                       {formatPercentage(platformMetrics.orderGrowth)}
@@ -496,7 +462,7 @@ export default function ReportsPage() {
                   <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 truncate">
                     {formatCurrency(platformMetrics.totalRevenue)}
                   </p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-orange-600 flex items-center gap-1">
                     <FiTrendingUp className="w-3 h-3 shrink-0" />
                     <span className="truncate">
                       {formatPercentage(platformMetrics.revenueGrowth)}
@@ -520,7 +486,7 @@ export default function ReportsPage() {
                     {platformMetrics.totalFarmers.toLocaleString()}
                   </p>
                 </div>
-                <FiUsers className="w-4 h-4 text-green-600 shrink-0" />
+                <FiUsers className="w-4 h-4 text-orange-600 shrink-0" />
               </div>
             </div>
             <div className="bg-white p-3 sm:p-4 rounded-lg shadow">
@@ -549,11 +515,11 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between">
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-600 truncate">Approved</p>
-                  <p className="text-sm sm:text-lg font-semibold text-green-600 truncate">
+                  <p className="text-sm sm:text-lg font-semibold text-orange-600 truncate">
                     {platformMetrics.approvedProducts.toLocaleString()}
                   </p>
                 </div>
-                <FiCheckCircle className="w-4 h-4 text-green-600 shrink-0" />
+                <FiCheckCircle className="w-4 h-4 text-orange-600 shrink-0" />
               </div>
             </div>
             <div className="bg-white p-3 sm:p-4 rounded-lg shadow">
@@ -593,7 +559,7 @@ export default function ReportsPage() {
                     <div className="flex-1 mx-2 sm:mx-4">
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-green-600 h-2 rounded-full transition-all duration-300"
+                          className="bg-orange-600 h-2 rounded-full transition-all duration-300"
                           style={{
                             width: `${Math.min(
                               (data.revenue / 3500) * 100,
@@ -628,7 +594,7 @@ export default function ReportsPage() {
                       <span className="text-sm font-medium text-gray-900 truncate pr-2">
                         {category.category}
                       </span>
-                      <span className="text-sm text-green-600 shrink-0">
+                      <span className="text-sm text-orange-600 shrink-0">
                         {formatPercentage(category.growth)}
                       </span>
                     </div>
@@ -644,7 +610,7 @@ export default function ReportsPage() {
                       <div
                         className={`h-1 rounded-full transition-all duration-300 ${
                           index === 0
-                            ? "bg-green-500"
+                            ? "bg-orange-500"
                             : index === 1
                             ? "bg-blue-500"
                             : index === 2
@@ -697,8 +663,8 @@ export default function ReportsPage() {
                       <tr key={farmer.id} className="hover:bg-gray-50">
                         <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 shrink-0">
-                              <span className="text-green-600 font-medium text-sm">
+                            <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 shrink-0">
+                              <span className="text-orange-600 font-medium text-sm">
                                 #{index + 1}
                               </span>
                             </div>
@@ -716,7 +682,7 @@ export default function ReportsPage() {
                           <div className="text-sm text-gray-900">
                             {farmer.totalProducts}
                           </div>
-                          <div className="text-sm text-green-600">
+                          <div className="text-sm text-orange-600">
                             {farmer.approvedProducts} approved
                           </div>
                         </td>
@@ -803,3 +769,4 @@ export default function ReportsPage() {
     </div>
   );
 }
+

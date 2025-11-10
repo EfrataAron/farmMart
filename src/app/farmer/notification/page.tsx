@@ -177,7 +177,7 @@ export default function FarmerNotificationsPage() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case "order":
-        return "text-green-600 bg-green-50";
+        return "text-orange-600 bg-orange-50";
       case "message":
         return "text-blue-600 bg-blue-50";
       case "system":
@@ -198,7 +198,7 @@ export default function FarmerNotificationsPage() {
       case "medium":
         return "bg-yellow-100 text-yellow-800";
       case "low":
-        return "bg-green-100 text-green-800";
+        return "bg-orange-100 text-orange-800";
       default:
         return "bg-gray-100 text-gray-800";
     }
@@ -279,7 +279,7 @@ export default function FarmerNotificationsPage() {
                     {stats.total}
                   </p>
                 </div>
-                <FiBell className="w-8 h-8 text-green-600" />
+                <FiBell className="w-8 h-8 text-orange-600" />
               </div>
             </div>
             <div className="bg-white p-4 rounded-lg shadow">
@@ -327,13 +327,13 @@ export default function FarmerNotificationsPage() {
                   placeholder="Search notifications..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                 />
               </div>
               <select
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none bg-white"
               >
                 <option value="all">All Types</option>
                 <option value="order">Order</option>
@@ -344,7 +344,7 @@ export default function FarmerNotificationsPage() {
               <select
                 value={priorityFilter}
                 onChange={(e) => setPriorityFilter(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none bg-white"
               >
                 <option value="all">All Priorities</option>
                 <option value="critical">Critical</option>
@@ -355,7 +355,7 @@ export default function FarmerNotificationsPage() {
               <select
                 value={readFilter}
                 onChange={(e) => setReadFilter(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none bg-white"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none bg-white"
               >
                 <option value="all">All Status</option>
                 <option value="unread">Unread</option>
@@ -371,7 +371,7 @@ export default function FarmerNotificationsPage() {
                 <div
                   key={notification.id}
                   className={`p-6 hover:bg-gray-50 transition-colors ${
-                    !notification.read ? "bg-green-50" : ""
+                    !notification.read ? "bg-orange-50" : ""
                   }`}
                 >
                   <div className="flex items-start gap-4">
@@ -408,7 +408,7 @@ export default function FarmerNotificationsPage() {
                               </span>
                             )}
                             {!notification.read && (
-                              <span className="w-2 h-2 bg-green-600 rounded-full"></span>
+                              <span className="w-2 h-2 bg-orange-600 rounded-full"></span>
                             )}
                           </div>
                           <p className="text-sm text-gray-600 mb-2">
@@ -513,3 +513,4 @@ export default function FarmerNotificationsPage() {
     </div>
   );
 }
+

@@ -15,7 +15,7 @@ import Link from "next/link";
 import FarmerSidebar from "@/components/farmer/FarmerSidebar";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store/store';
-import { setProducts } from '@/store/productSlice';
+import { setProducts } from '@/store/productsSlice';
 
 const Select = dynamic(() => import("react-select"), { ssr: false });
 
@@ -39,7 +39,7 @@ interface Product {
 
 export default function ProductListPage() {
   const [isOpen, setIsOpen] = useState(false);
-  const products = useSelector((state: RootState) => state.products.products) as Product[];
+  const products = useSelector((state: RootState) => state.products.items) as Product[] || [];
   const dispatch = useDispatch();
   const [viewProduct, setViewProduct] = useState<Product | null>(null);
   const [editProduct, setEditProduct] = useState<Product | null>(null);
@@ -169,7 +169,7 @@ export default function ProductListPage() {
                 name="search"
                 type="text"
                 placeholder="Search by product name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -179,7 +179,7 @@ export default function ProductListPage() {
                 type="date"
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <div className="w-full">
                 <Select
@@ -199,7 +199,7 @@ export default function ProductListPage() {
           {/* Actions */}
           <div className="flex items-center justify-between bg-white px-4 py-3 rounded-t-lg border-b border-gray-200 mb-0">
             <button
-              className="flex items-center gap-1 border border-gray-300 px-4 py-1 rounded hover:bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              className="flex items-center gap-1 border border-gray-300 px-4 py-1 rounded hover:bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
               aria-label="Export data"
             >
               <FiDownload className="w-4 h-4" aria-hidden="true" />
@@ -208,7 +208,7 @@ export default function ProductListPage() {
             <div className="relative">
               <Link href="/farmer/addproduct">
                 <button
-                  className="flex items-center gap-1 bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                  className="flex items-center gap-1 bg-orange-600 text-white px-4 py-1 rounded hover:bg-orange-700 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                   aria-label="Add product"
                   aria-haspopup="true"
                 >
@@ -260,7 +260,7 @@ export default function ProductListPage() {
                     </td>
                     <td className="py-3 px-2 md:py-2">
                       {p.status === "instock" ? (
-                        <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
+                        <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-semibold">
                           In Stock
                         </span>
                       ) : (
@@ -277,7 +277,7 @@ export default function ProductListPage() {
                         <FiEye />
                       </button>
                       <button
-                        className="text-gray-500 hover:text-green-500 text-xl md:text-base"
+                        className="text-gray-500 hover:text-orange-500 text-xl md:text-base"
                         onClick={() => handleEdit(p)}
                       >
                         <FiEdit />
@@ -295,7 +295,7 @@ export default function ProductListPage() {
             </table>
             {/* Footer */}
             <div className="flex justify-between items-center px-6 py-3 border-t border-gray-200 text-sm">
-              <button className="text-green-600">More</button>
+              <button className="text-orange-600">More</button>
               <div className="flex items-center gap-2">
                 <span>Rows per page:</span>
                 <select className="border rounded p-1">
@@ -429,7 +429,7 @@ export default function ProductListPage() {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700"
+                    className="px-4 py-2 rounded bg-orange-600 text-white hover:bg-orange-700"
                   >
                     Save
                   </button>
@@ -442,3 +442,4 @@ export default function ProductListPage() {
     </div>
   );
 }
+

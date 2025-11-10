@@ -11,7 +11,7 @@ export default function ProjectsPage() {
   const projects = useSelector((state: RootState) => state.projects.projects);
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'completed': return 'bg-green-100 text-green-800';
+      case 'completed': return 'bg-orange-100 text-orange-800';
       case 'ongoing': return 'bg-blue-100 text-blue-800';
       case 'planning': return 'bg-yellow-100 text-yellow-800';
       case 'on-hold': return 'bg-red-100 text-red-800';
@@ -33,8 +33,8 @@ export default function ProjectsPage() {
               Discover innovative agricultural initiatives that are transforming farming practices and building sustainable food systems
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <div className="bg-green-50 px-4 sm:px-6 py-3 sm:py-4 rounded-lg">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-600">{projects.length}</div>
+              <div className="bg-orange-50 px-4 sm:px-6 py-3 sm:py-4 rounded-lg">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600">{projects.length}</div>
                 <div className="text-xs sm:text-sm lg:text-base text-gray-600">Total Projects</div>
               </div>
               <div className="bg-blue-50 px-4 sm:px-6 py-3 sm:py-4 rounded-lg">
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
                       {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                     </span>
                   </div>
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold text-green-600">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold text-orange-600">
                     ${project.budget.toLocaleString()}
                   </div>
                   {project.status === 'ongoing' && (
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div 
-                            className="bg-green-600 h-2 rounded-full transition-all duration-300"
+                            className="bg-orange-600 h-2 rounded-full transition-all duration-300"
                             style={{ width: `${project.progress}%` }}
                           ></div>
                         </div>
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
                       <span className="truncate">{project.location}</span>
                     </div>
                   </div>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-green-600 transition-colors line-clamp-2 flex-shrink-0">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 flex-shrink-0">
                     {project.title}
                   </h3>
                   <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-3 flex-grow">{project.description}</p>
@@ -118,7 +118,7 @@ export default function ProjectsPage() {
                       </div>
                     </div>
                     <Link href={`/projects/${project.id}`}>
-                      <button className="text-green-600 hover:text-green-700 font-medium text-xs sm:text-sm flex items-center gap-1 transition-colors whitespace-nowrap">
+                      <button className="text-orange-600 hover:text-orange-700 font-medium text-xs sm:text-sm flex items-center gap-1 transition-colors whitespace-nowrap">
                         Learn More
                         <FiArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                       </button>
@@ -135,3 +135,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+

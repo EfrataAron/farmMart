@@ -78,6 +78,9 @@ export default function Header() {
     { name: "Services", key: "services" },
     { name: "Projects", href: "/projects" },
     { name: "Blog", key: "blog" },
+    { name: "Community", href: "/community" },
+    { name: "Price Trends", href: "/price-trends" },
+    { name: "Crop Calendar", href: "/crop-calendar" },
   ];
 
   const handleLogout = () => {
@@ -89,19 +92,19 @@ export default function Header() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-green-50 border-b border-green-100 py-2 hidden lg:block w-full">
+      <div className="bg-orange-50 border-b border-orange-100 py-2 hidden lg:block w-full">
         <div className="px-10 flex justify-between items-center text-sm text-gray-600">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
-              <FiPhone className="w-4 h-4 text-green-600" />
+              <FiPhone className="w-4 h-4 text-orange-600" />
               <span>+1 (555) 123-4567</span>
             </div>
             <div className="flex items-center space-x-2">
-              <FiMail className="w-4 h-4 text-green-600" />
+              <FiMail className="w-4 h-4 text-orange-600" />
               <span>info@farmMart.com</span>
             </div>
           </div>
-          <div className="text-green-700 font-medium">
+          <div className="text-orange-700 font-medium">
             🚚 Free shipping on orders over $50
           </div>
         </div>
@@ -112,11 +115,11 @@ export default function Header() {
         <div className="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-10 xl:px-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 cursor-pointer">
-            <div className="bg-green-600 p-2 rounded-full">
+            <div className="bg-orange-600 p-2 rounded-full">
               <BiLeaf className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-green-600">farmMart</h1>
+              <h1 className="text-2xl font-bold text-orange-600">farmMart</h1>
               <p className="text-xs text-gray-500 hidden sm:block">
                 Fresh & Organic
               </p>
@@ -131,7 +134,7 @@ export default function Header() {
           >
             <Link
               href="/"
-              className="text-gray-700 hover:text-green-600 font-medium"
+              className="text-gray-700 hover:text-orange-600 font-medium"
             >
               Home
             </Link>
@@ -141,7 +144,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-green-600 font-medium"
+                  className="text-gray-700 hover:text-orange-600 font-medium"
                 >
                   {item.name}
                 </Link>
@@ -161,7 +164,7 @@ export default function Header() {
                         ? "/services"
                         : "/blog"
                     }
-                    className="flex items-center space-x-1 text-gray-700 hover:text-green-600 font-medium focus:outline-none"
+                    className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 font-medium focus:outline-none"
                   >
                     <span>{item.name}</span>
                     <FiChevronDown
@@ -197,13 +200,13 @@ export default function Header() {
             {/* About Us as a single link */}
             <Link
               href="/about-us"
-              className="text-gray-700 hover:text-green-600 font-medium"
+              className="text-gray-700 hover:text-orange-600 font-medium"
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-green-600 font-medium"
+              className="text-gray-700 hover:text-orange-600 font-medium"
             >
               Contact
             </Link>
@@ -216,7 +219,7 @@ export default function Header() {
               {!isSearchOpen ? (
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className="p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+                  className="p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-full"
                 >
                   <FiSearch className="w-5 h-5" />
                 </button>
@@ -228,6 +231,12 @@ export default function Header() {
                     placeholder="Search products..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && searchQuery.trim()) {
+                        router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+                        setIsSearchOpen(false);
+                      }
+                    }}
                     className="bg-transparent outline-none flex-1 text-sm"
                     autoFocus
                     onBlur={() => {
@@ -238,12 +247,17 @@ export default function Header() {
                   />
                   <button
                     onClick={() => {
-                      setSearchQuery("");
-                      setIsSearchOpen(false);
+                      if (searchQuery.trim()) {
+                        router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+                        setIsSearchOpen(false);
+                      } else {
+                        setSearchQuery("");
+                        setIsSearchOpen(false);
+                      }
                     }}
                     className="ml-2 text-gray-400 hover:text-gray-600"
                   >
-                    <FiX className="w-4 h-4" />
+                    {searchQuery ? <FiSearch className="w-4 h-4" /> : <FiX className="w-4 h-4" />}
                   </button>
                 </div>
               )}
@@ -252,11 +266,11 @@ export default function Header() {
             {/* Wishlist */}
             <Link
               href="/wishlist"
-              className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+              className="relative p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-full"
             >
               <FiHeart className="w-5 h-5" />
               {isLoggedIn && wishlist.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {wishlist.length}
                 </span>
               )}
@@ -265,11 +279,11 @@ export default function Header() {
             {/* Cart */}
             <Link
               href="/cart"
-              className="relative p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+              className="relative p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-full"
             >
               <FiShoppingCart className="w-5 h-5" />
               {state.totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {state.totalItems}
                 </span>
               )}
@@ -287,7 +301,7 @@ export default function Header() {
                     alt="User"
                     width={32}
                     height={32}
-                    className="w-8 h-8 rounded-full object-cover border border-green-700"
+                    className="w-8 h-8 rounded-full object-cover border border-orange-700"
                   />
                 </button>
                 {showUserMenu && (
@@ -316,7 +330,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/login"
-                className="hidden md:block bg-green-600 text-white px-6 py-2.5 rounded-full hover:bg-green-700 font-semibold"
+                className="hidden md:block bg-orange-600 text-white px-6 py-2.5 rounded-full hover:bg-orange-700 font-semibold"
               >
                 Login
               </Link>
@@ -324,7 +338,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+              className="lg:hidden p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-full"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -346,14 +360,25 @@ export default function Header() {
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && searchQuery.trim()) {
+                router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+              }
+            }}
             className="bg-transparent outline-none flex-1 text-sm"
           />
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery("")}
+              onClick={() => {
+                if (searchQuery.trim()) {
+                  router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+                } else {
+                  setSearchQuery("");
+                }
+              }}
               className="ml-2 text-gray-400 hover:text-gray-600"
             >
-              <FiX className="w-4 h-4" />
+              <FiSearch className="w-4 h-4" />
             </button>
           )}
         </div>
@@ -362,7 +387,7 @@ export default function Header() {
       {/* Mobile Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-green-200/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-orange-200/50 z-40 lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
@@ -376,7 +401,7 @@ export default function Header() {
         <div className="p-6 flex flex-col h-full">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="self-end mb-6 p-2 text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-full"
+            className="self-end mb-6 p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-full"
           >
             <FiX className="w-6 h-6" />
           </button>
@@ -385,7 +410,7 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-700 font-medium hover:text-green-600"
+              className="text-gray-700 font-medium hover:text-orange-600"
             >
               Home
             </Link>
@@ -395,7 +420,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-700 font-medium hover:text-green-600"
+                  className="text-gray-700 font-medium hover:text-orange-600"
                 >
                   {item.name}
                 </Link>
@@ -411,7 +436,7 @@ export default function Header() {
                           : "/blog"
                       }
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-gray-700 font-medium hover:text-green-600 flex-1"
+                      className="text-gray-700 font-medium hover:text-orange-600 flex-1"
                     >
                       {item.name}
                     </Link>
@@ -423,7 +448,7 @@ export default function Header() {
                           [item.key!]: !prev[item.key!],
                         }))
                       }
-                      className="p-2 text-gray-700 hover:text-green-600"
+                      className="p-2 text-gray-700 hover:text-orange-600"
                     >
                       <FiChevronDown
                         className={`w-5 h-5 transition-transform duration-300 ${
@@ -441,7 +466,7 @@ export default function Header() {
                           key={link.href}
                           href={link.href}
                           onClick={() => setIsMenuOpen(false)}
-                          className="text-gray-600 hover:text-green-600"
+                          className="text-gray-600 hover:text-orange-600"
                         >
                           {link.label}
                         </Link>
@@ -454,14 +479,14 @@ export default function Header() {
             <Link
               href="/aboutus"
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-700 font-medium hover:text-green-600"
+              className="text-gray-700 font-medium hover:text-orange-600"
             >
               About Us
             </Link>
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="text-gray-700 font-medium hover:text-green-600"
+              className="text-gray-700 font-medium hover:text-orange-600"
             >
               Contact
             </Link>
@@ -474,7 +499,7 @@ export default function Header() {
                   router.push("/login");
                 }
               }}
-              className="text-green-600 font-semibold hover:underline text-left"
+              className="text-orange-600 font-semibold hover:underline text-left"
             >
               {isLoggedIn ? (
                 <span className="flex items-center gap-2">
@@ -490,3 +515,4 @@ export default function Header() {
     </>
   );
 }
+

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       <div className="mx-auto flex flex-col lg:flex-row gap-4 sm:gap-6 min-h-[400px] sm:min-h-[500px] lg:h-[calc(100vh-220px)]">
         <div className="w-full lg:w-3/4 relative rounded-lg overflow-hidden shadow-lg aspect-[4/3]">
           <Image
-            src="/agri.jpg"
+            src="/farmMart.jpg"
             alt="Greenhouse"
             fill
             className="object-cover"
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               src: "/green.jpeg",
               alt: "Special Deal",
               heading: "Special Products Deal of the Month",
-              buttonColor: "text-green-600",
+              buttonColor: "text-orange-600",
               rounded: "rounded-lg lg:rounded-t-lg lg:rounded-b-none",
             },
             {
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
               alt: "Summer Sale",
               heading: "Summer Sale",
               subtext: "75% OFF only Fruit & Vegetable",
-              buttonColor: "text-green-700",
+              buttonColor: "text-orange-700",
               rounded: "rounded-lg lg:rounded-b-lg lg:rounded-t-none",
             },
           ].map((promo, index) => (
@@ -82,3 +82,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+

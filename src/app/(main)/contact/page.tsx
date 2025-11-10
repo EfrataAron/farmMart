@@ -5,7 +5,7 @@ export default function ContactPage() {
     <>
      
       <main className="max-w-4xl mx-auto py-16 px-4">
-        <h1 className="text-3xl font-bold mb-4 text-green-700">Contact Us</h1>
+        <h1 className="text-3xl font-bold mb-4 text-orange-700">Contact Us</h1>
         <p className="mb-6 text-gray-600">
           Have questions or need help? Fill out the form below and we’ll get back to you soon.
         </p>
@@ -39,7 +39,7 @@ export default function ContactPage() {
           </div>
           <button
             type="submit"
-            className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+            className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700"
           >
             Send Message
           </button>
@@ -49,3 +49,4 @@ export default function ContactPage() {
     </>
   )
 }
+

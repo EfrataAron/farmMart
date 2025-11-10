@@ -32,7 +32,7 @@ Be friendly, concise, and helpful. Keep responses under 150 words. If asked abou
     ];
 
     const completion = await groq.chat.completions.create({
-      messages: messages as any,
+      messages: messages as Array<{ role: string; content: string }>,
       model: 'llama-3.3-70b-versatile',
       temperature: 0.7,
       max_tokens: 300,
@@ -50,3 +50,4 @@ Be friendly, concise, and helpful. Keep responses under 150 words. If asked abou
     );
   }
 }
+

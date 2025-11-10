@@ -376,7 +376,7 @@ export default function Orders() {
                         className={`px-2 py-1 rounded-full text-xs font-semibold ${
                           order.status === "Pending"
                             ? "bg-yellow-100 text-yellow-800"
-                            : "bg-green-100 text-green-800"
+                            : "bg-orange-100 text-orange-800"
                         }`}
                       >
                         {order.status}
@@ -389,7 +389,7 @@ export default function Orders() {
                           onClick={() => handleView(order)}
                         />
                         <FiEdit
-                          className="text-green-600 cursor-pointer"
+                          className="text-orange-600 cursor-pointer"
                           onClick={() => handleEdit(order)}
                         />
                         <FiTrash2
@@ -553,7 +553,7 @@ export default function Orders() {
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700"
+                      className="px-4 py-2 rounded bg-orange-600 text-white hover:bg-orange-700"
                     >
                       Save
                     </button>
@@ -675,3 +675,4 @@ export default function Orders() {
     </div>
   );
 }
+

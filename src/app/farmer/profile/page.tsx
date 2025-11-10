@@ -62,10 +62,10 @@ export default function FarmerProfilePage() {
           alt="Farmer Profile" 
           width={128} 
           height={128} 
-          className="w-32 h-32 rounded-full object-cover border-4 border-green-200" 
+          className="w-32 h-32 rounded-full object-cover border-4 border-orange-200" 
         />
         <div>
-          <div className="text-2xl font-bold text-green-800">{profile.name}</div>
+          <div className="text-2xl font-bold text-orange-800">{profile.name}</div>
           <div className="text-gray-600">{profile.farmName}</div>
           <div className="text-sm text-gray-500">{profile.location}</div>
         </div>
@@ -160,7 +160,7 @@ export default function FarmerProfilePage() {
             </div>
           </div>
           <div className="flex gap-4">
-            <button type="submit" className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+            <button type="submit" className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700">
               Save Changes
             </button>
             <button type="button" onClick={handleCancel} className="bg-gray-300 px-6 py-2 rounded hover:bg-gray-400">
@@ -208,7 +208,7 @@ export default function FarmerProfilePage() {
             <label className="block font-medium mb-2">Crops Grown</label>
             <div className="flex flex-wrap gap-2">
               {profile.crops.map((crop, index) => (
-                <span key={index} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                <span key={index} className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">
                   {crop}
                 </span>
               ))}
@@ -216,7 +216,7 @@ export default function FarmerProfilePage() {
           </div>
           <button 
             onClick={() => setEditing(true)} 
-            className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+            className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700"
           >
             Edit Profile
           </button>

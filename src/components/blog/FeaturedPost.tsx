@@ -23,7 +23,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
               priority={true}
             />
             <div className="absolute top-4 left-4">
-              <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                 Featured
               </span>
             </div>
@@ -47,13 +47,13 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
             {post.excerpt}
           </p>
           <div className="flex items-center justify-between">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
               <FiTag className="mr-1" />
               {post.category}
             </span>
             <Link
               href={`/blog/${post.slug}`}
-              className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
               aria-label={`Read full article: ${post.title}`}
             >
               Read Article
@@ -64,3 +64,4 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
     </div>
   )
 }
+

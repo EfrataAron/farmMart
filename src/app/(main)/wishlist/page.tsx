@@ -50,7 +50,7 @@ export default function WishlistPage() {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search wishlist..."
-              className="border border-gray-300 rounded px-4 py-2 w-full text-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="border border-gray-300 rounded px-4 py-2 w-full text-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
           </div>
           {filteredWishlist.length === 0 ? (
@@ -77,7 +77,7 @@ export default function WishlistPage() {
                     {/* Product Info */}
                     <div className="flex-1 w-full">
                       <div className="font-bold text-lg">{product.title}</div>
-                      <div className="text-green-700 font-semibold">UGX {product.price}/{product.unit || 'kg'}</div>
+                      <div className="text-orange-700 font-semibold">UGX {product.price}/{product.unit || 'kg'}</div>
                     </div>
                     {/* Add to Cart and Remove Buttons */}
                     <div className="flex gap-2">
@@ -93,7 +93,7 @@ export default function WishlistPage() {
                           });
                           removeFromWishlist(product.id);
                         }}
-                        className="px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700 font-semibold text-sm"
+                        className="px-3 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 font-semibold text-sm"
                       >
                         Add to Cart
                       </button>

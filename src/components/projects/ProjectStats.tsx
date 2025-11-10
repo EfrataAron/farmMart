@@ -45,8 +45,8 @@ const ProjectStats: React.FC<ProjectStatsProps> = ({ projects, className = '' })
       label: 'Completed',
       value: completedProjects,
       icon: <FiCheckCircle className="w-6 h-6" />,
-      color: 'text-green-600',
-      bgColor: 'bg-green-100'
+      color: 'text-orange-600',
+      bgColor: 'bg-orange-100'
     },
     {
       label: 'In Progress',
@@ -137,7 +137,7 @@ const ProjectStats: React.FC<ProjectStatsProps> = ({ projects, className = '' })
                     <div className="flex items-center gap-2 mt-1">
                       <div className="flex-1 bg-gray-200 rounded-full h-2">
                         <div 
-                          className="bg-green-600 h-2 rounded-full transition-all duration-300"
+                          className="bg-orange-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${project.progress}%` }}
                         ></div>
                       </div>
@@ -156,3 +156,4 @@ const ProjectStats: React.FC<ProjectStatsProps> = ({ projects, className = '' })
 };
 
 export default ProjectStats;
+

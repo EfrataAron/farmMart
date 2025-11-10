@@ -42,7 +42,7 @@ export default function EditProductPage() {
               <label className="md:w-40 text-lg md:text-2xl font-semibold text-left">Images:</label>
               <div className="flex-1">
                 <div className="flex items-center gap-3 border rounded px-3 py-2 bg-white flex-wrap">
-                  <button type="button" className="bg-green-500 text-white rounded px-4 py-2 font-semibold hover:bg-green-600 transition w-fit" onClick={() => fileInputRef.current?.click()}>
+                  <button type="button" className="bg-orange-500 text-white rounded px-4 py-2 font-semibold hover:bg-orange-600 transition w-fit" onClick={() => fileInputRef.current?.click()}>
                     Choose Images
                   </button>
                   <input
@@ -86,8 +86,8 @@ export default function EditProductPage() {
               <input type="text"  placeholder="enter status" className="flex-1 border rounded px-4 py-2" />
             </div>
             <div className="flex gap-4 mt-4 justify-center md:justify-end">
-               <button type="button" className="bg-red-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-green-600 transition">Cancel</button>
-              <button type="submit" className="bg-green-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-green-600 transition">Save</button>
+               <button type="button" className="bg-red-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-orange-600 transition">Cancel</button>
+              <button type="submit" className="bg-orange-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-orange-600 transition">Save</button>
             </div>
           </form>
         </div>

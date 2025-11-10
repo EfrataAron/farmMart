@@ -140,16 +140,16 @@ const sections = [
 export default function AboutPage() {
   return (
     <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-10 xl:px-16">
-      <h1 className="text-3xl font-bold mb-8 text-green-700">About Us</h1>
+      <h1 className="text-3xl font-bold mb-8 text-orange-700">About Us</h1>
       {sections.map((section) => (
         <section key={section.id} className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2 text-green-600">
+          <h2 className="text-2xl font-semibold mb-2 text-orange-600">
             {section.label}
           </h2>
           <p className="text-gray-700 mb-2">{section.summary}</p>
           <div
             id={`details-${section.id}`}
-            className="text-gray-800 bg-green-50 rounded p-4 border border-green-100 animate-fade-in"
+            className="text-gray-800 bg-orange-50 rounded p-4 border border-orange-100 animate-fade-in"
           >
             {section.id === "our-team" ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -163,9 +163,9 @@ export default function AboutPage() {
                       alt={member.name}
                       width={96}
                       height={96}
-                      className="w-24 h-24 rounded-full object-cover mb-2 border-2 border-green-200"
+                      className="w-24 h-24 rounded-full object-cover mb-2 border-2 border-orange-200"
                     />
-                    <div className="font-semibold text-green-700 text-lg text-center">
+                    <div className="font-semibold text-orange-700 text-lg text-center">
                       {member.name}
                     </div>
                     <div className="text-gray-600 text-sm text-center">
@@ -186,9 +186,9 @@ export default function AboutPage() {
                       alt={t.name}
                       width={80}
                       height={80}
-                      className="w-20 h-20 rounded-full object-cover mb-2 border-2 border-green-200"
+                      className="w-20 h-20 rounded-full object-cover mb-2 border-2 border-orange-200"
                     />
-                    <div className="font-semibold text-green-700 text-base text-center mb-1">
+                    <div className="font-semibold text-orange-700 text-base text-center mb-1">
                       {t.name}
                     </div>
                     <div className="text-gray-700 text-sm text-center italic">
@@ -211,3 +211,5 @@ export default function AboutPage() {
     </main>
   );
 }
+
+

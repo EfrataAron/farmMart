@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import Image from 'next/image';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '@/store/productSlice';
+import { addProduct } from '@/store/productsSlice';
 
 export default function AddProductPage() {
   const [images, setImages] = useState<string[]>([]);
@@ -82,7 +82,7 @@ export default function AddProductPage() {
               <label htmlFor="product-images" className="md:w-40 text-lg md:text-2xl font-semibold text-left">Images:</label>
               <div className="flex-1">
                 <div className="flex items-center gap-3 border rounded px-3 py-2 bg-white flex-wrap">
-                  <button type="button" className="bg-green-500 text-white rounded px-4 py-2 font-semibold hover:bg-green-600 transition w-fit" onClick={() => fileInputRef.current?.click()}>
+                  <button type="button" className="bg-orange-500 text-white rounded px-4 py-2 font-semibold hover:bg-orange-600 transition w-fit" onClick={() => fileInputRef.current?.click()}>
                     Choose Images
                   </button>
                   <input
@@ -129,7 +129,7 @@ export default function AddProductPage() {
               <input id="product-status" name="status" type="text" placeholder="enter status" className="flex-1 border rounded px-4 py-2" autoComplete="off" onChange={(e) => setStatus(e.target.value)} />
             </div>
             <div className="flex gap-4 mt-4 justify-center md:justify-end">
-              <button type="submit" className="bg-green-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-green-600 transition">Save</button>
+              <button type="submit" className="bg-orange-500 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-orange-600 transition">Save</button>
               <button type="button" onClick={() => router.push('/farmer/productview')} className="bg-gray-400 text-white rounded px-10 py-2 text-lg font-semibold shadow hover:bg-gray-500 transition">Cancel</button>
             </div>
           </form>

@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const getStatusColor = (status: ProjectStatus) => {
     switch (status) {
-      case 'completed': return 'bg-green-100 text-green-800';
+      case 'completed': return 'bg-orange-100 text-orange-800';
       case 'ongoing': return 'bg-blue-100 text-blue-800';
       case 'planning': return 'bg-yellow-100 text-yellow-800';
       case 'on-hold': return 'bg-red-100 text-red-800';
@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
           </span>
         </div>
-        <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-600">
+        <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-orange-600">
           ${project.budget.toLocaleString()}
         </div>
         {project.status === 'ongoing' && (
@@ -49,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div 
-                  className="bg-green-600 h-2 rounded-full transition-all duration-300"
+                  className="bg-orange-600 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${project.progress}%` }}
                 ></div>
               </div>
@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.location}
           </div>
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+        <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
           {project.title}
         </h3>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">{project.description}</p>
@@ -83,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
           <Link href={`/projects/${project.id}`}>
-            <button className="text-green-600 hover:text-green-700 font-medium text-sm flex items-center gap-1 transition-colors">
+            <button className="text-orange-600 hover:text-orange-700 font-medium text-sm flex items-center gap-1 transition-colors">
               Learn More
               <FiArrowRight className="w-4 h-4" />
             </button>
@@ -95,3 +95,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 };
 
 export default ProjectCard;
+

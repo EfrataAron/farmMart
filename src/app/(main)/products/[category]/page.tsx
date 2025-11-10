@@ -41,7 +41,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category?: 
   const resolvedParams = use(params);
   const categorySlug = resolvedParams.category || 'all'; 
   const categoryName = categoryMapping[categorySlug];
-  const products = useSelector((state: RootState) => state.products.products);
+  const products = useSelector((state: RootState) => state.products.items) || [];
 
   // All hooks must be called before any conditional logic
   const [isFilterOpen, setIsFilterOpen] = useState(false);

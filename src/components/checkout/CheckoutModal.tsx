@@ -207,7 +207,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         required
                       />
                     </div>
@@ -220,7 +220,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         required
                       />
                     </div>
@@ -235,7 +235,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         required
                       />
                     </div>
@@ -248,7 +248,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         required
                       />
                     </div>
@@ -271,7 +271,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="address"
                         value={formData.address}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         required
                       />
                     </div>
@@ -285,7 +285,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -298,7 +298,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                           name="district"
                           value={formData.district}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -312,7 +312,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         value={formData.deliveryNotes}
                         onChange={handleInputChange}
                         rows={3}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         placeholder="Any special instructions for delivery..."
                       />
                     </div>
@@ -374,7 +374,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                         name="mobileNumber"
                         value={formData.mobileNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                         placeholder="e.g., 0701234567"
                         required
                       />
@@ -393,7 +393,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                           name="cardNumber"
                           value={formData.cardNumber}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                           placeholder="1234 5678 9012 3456"
                           required
                         />
@@ -408,7 +408,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                             name="expiryDate"
                             value={formData.expiryDate}
                             onChange={handleInputChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                             placeholder="MM/YY"
                             required
                           />
@@ -422,7 +422,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                             name="cvv"
                             value={formData.cvv}
                             onChange={handleInputChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                             placeholder="123"
                             required
                           />
@@ -437,7 +437,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                           name="cardName"
                           value={formData.cardName}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                           required
                         />
                       </div>
@@ -479,14 +479,14 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                   </div>
                   <div className="flex justify-between text-lg font-semibold pt-2 border-t">
                     <span>Total</span>
-                    <span className="text-green-600">UGX {totalAmount.toLocaleString()}</span>
+                    <span className="text-orange-600">UGX {totalAmount.toLocaleString()}</span>
                   </div>
                 </div>
 
                 {/* Place Order Button */}
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold flex items-center justify-center"
+                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition font-semibold flex items-center justify-center"
                 >
                   <FiCreditCard className="mr-2" />
                   Place Order - UGX {totalAmount.toLocaleString()}
@@ -513,3 +513,4 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     </>
   )
 }
+
