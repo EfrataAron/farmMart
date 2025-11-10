@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import Chatbot from "@/components/shared/Chatbot";
 import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
 import { Providers } from "@/app/providers";
@@ -47,6 +48,7 @@ export default function RootLayout({
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />
+              <Chatbot />
             </CartProvider>
           </WishlistProvider>
         </Providers>
