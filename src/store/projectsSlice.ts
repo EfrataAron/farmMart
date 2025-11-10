@@ -1,38 +1,61 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  status?: 'active' | 'completed' | 'pending';
-  farmerId?: string;
-}
+import { Project, allProjectsData } from '@/data/projectsData';
 
 interface ProjectsState {
-  items: Project[];
-  currentProject: Project | null;
+  projects: Project[];
+  loading: boolean;
+  error: string | null;
+  selectedProject: Project | null;
 }
 
 const initialState: ProjectsState = {
-  items: [],
-  currentProject: null,
+  projects: allProjectsData,
+  loading: false,
+  error: null,
+  selectedProject: null,
 };
 
 const projectsSlice = createSlice({
   name: 'projects',
   initialState,
   reducers: {
-    setProjects: (state, action: PayloadAction<Project[]>) => {
-      state.items = action.payload;
+    setProjects(state, action: PayloadAction<Project[]>) {
+      state.projects = action.payload;
+      state.loading = false;
+      state.error = null;
     },
-    setCurrentProject: (state, action: PayloadAction<Project>) => {
-      state.currentProject = action.payload;
+    addProject(state, action: PayloadAction<Project>) {
+      state.projects.push(action.payload);
     },
-    addProject: (state, action: PayloadAction<Project>) => {
-      state.items.push(action.payload);
+    updateProject(state, action: PayloadAction<Project>) {
+      const index = state.projects.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.projects[index] = action.payload;
+      }
+    },
+    deleteProject(state, action: PayloadAction<number>) {
+      state.projects = state.projects.filter(p => p.id !== action.payload);
+    },
+    setSelectedProject(state, action: PayloadAction<Project | null>) {
+      state.selectedProject = action.payload;
+    },
+    setLoading(state, action: PayloadAction<boolean>) {
+      state.loading = action.payload;
+    },
+    setError(state, action: PayloadAction<string | null>) {
+      state.error = action.payload;
     },
   },
 });
 
-export const { setProjects, setCurrentProject, addProject } = projectsSlice.actions;
+export const { 
+  setProjects, 
+  addProject, 
+  updateProject, 
+  deleteProject, 
+  setSelectedProject,
+  setLoading, 
+  setError 
+} = projectsSlice.actions;
+
 export default projectsSlice.reducer;
