@@ -1,7 +1,7 @@
 import React from 'react';
+import ProductSection from './product-section/ProductSection';
 import Link from 'next/link';
 import { popularProductsData } from '@/data/productData';
-import ProductSection from './product-section/ProductSection';
 
 const PopularProducts = () => (
    <div className=" px-4 md:px-12 ">
@@ -9,7 +9,7 @@ const PopularProducts = () => (
     <div className="flex justify-between items-center mt-6 mb-2">
       <h2 className="text-3xl font-semibold">Popular Products</h2>
       <Link href="/products/all">
-        <button className="px-2 py-1 bg-green-600 text-white rounded-md hover:bg-green-700 transition">
+        <button className="px-2 py-1 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition">
           View All →
         </button>
       </Link>

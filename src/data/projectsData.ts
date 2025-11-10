@@ -1,4 +1,4 @@
-// Projects data for the AgriLink platform
+// Projects data for the farmMart platform
 
 export type ProjectStatus = 'planning' | 'ongoing' | 'completed' | 'on-hold';
 export type ProjectType = 'sustainable-farming' | 'greenhouse' | 'irrigation-systems' | 'organic-certification' | 'community-gardens';
@@ -325,3 +325,4 @@ export const getProjectsByStatus = (status: ProjectStatus): Project[] => {
 };
 
 export default allProjectsData;
+

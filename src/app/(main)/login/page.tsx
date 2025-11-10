@@ -81,7 +81,7 @@
 //         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
 //       >
 //         <h2 className="text-2xl font-semibold mb-2">
-//           Log into <span className="text-green-600 font-bold">farmMart</span>
+//           Log into <span className="text-orange-600 font-bold">farmMart</span>
 //         </h2>
 //         <p className="text-gray-600 mb-4">Get Started Now</p>
 
@@ -130,14 +130,14 @@
 
 //         <button
 //           type="submit"
-//           className="bg-green-600 text-white rounded py-2 font-semibold hover:bg-green-700 transition mt-2"
+//           className="bg-orange-600 text-white rounded py-2 font-semibold hover:bg-orange-700 transition mt-2"
 //         >
 //           Login
 //         </button>
 
 //         <div className="text-center text-sm mt-2">
 //           don&apos;t have an account?{" "}
-//           <Link href="/signup" className="text-green-600 hover:underline">
+//           <Link href="/signup" className="text-orange-600 hover:underline">
 //             Sign up
 //           </Link>
 //         </div>
@@ -239,7 +239,7 @@ export default function LoginPage() {
         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
       >
         <h2 className="text-2xl font-semibold mb-2">
-          Log into <span className="text-green-600 font-bold">farmMart</span>
+          Log into <span className="text-orange-600 font-bold">farmMart</span>
         </h2>
         <p className="text-gray-600 mb-4">Get Started Now</p>
 
@@ -288,14 +288,14 @@ export default function LoginPage() {
 
         <button
           type="submit"
-          className="bg-green-600 text-white rounded py-2 font-semibold hover:bg-green-700 transition mt-2"
+          className="bg-orange-600 text-white rounded py-2 font-semibold hover:bg-orange-700 transition mt-2"
         >
           Login
         </button>
 
         <div className="text-center text-sm mt-2">
           Don&apos;t have an account?{" "}
-          <Link href="/signup" className="text-green-600 hover:underline">
+          <Link href="/signup" className="text-orange-600 hover:underline">
             Sign up
           </Link>
         </div>
@@ -399,7 +399,7 @@ export default function LoginPage() {
 //         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
 //       >
 //         <h2 className="text-2xl font-semibold mb-2">
-//           Log into <span className="text-green-600 font-bold">farmMart</span>
+//           Log into <span className="text-orange-600 font-bold">farmMart</span>
 //         </h2>
 //         <p className="text-gray-600 mb-4">Get Started Now</p>
 
@@ -448,14 +448,14 @@ export default function LoginPage() {
 
 //         <button
 //           type="submit"
-//           className="bg-green-600 text-white rounded py-2 font-semibold hover:bg-green-700 transition mt-2"
+//           className="bg-orange-600 text-white rounded py-2 font-semibold hover:bg-orange-700 transition mt-2"
 //         >
 //           Login
 //         </button>
 
 //         <div className="text-center text-sm mt-2">
 //           don&apos;t have an account?{" "}
-//           <Link href="/signup" className="text-green-600 hover:underline">
+//           <Link href="/signup" className="text-orange-600 hover:underline">
 //             Sign up
 //           </Link>
 //         </div>
@@ -463,3 +463,4 @@ export default function LoginPage() {
 //     </div>
 //   );
 // }
+

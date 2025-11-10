@@ -36,7 +36,7 @@ export default function FarmerSidebar({ onClose, open = true }: FarmerSidebarPro
     >
       <div>
         <div className="p-6 flex justify-between items-center">
-          <div className="text-2xl font-bold text-green-400">
+          <div className="text-2xl font-bold text-orange-400">
             Agri<span className="text-white">Link</span>
           </div>
           <button 
@@ -51,56 +51,56 @@ export default function FarmerSidebar({ onClose, open = true }: FarmerSidebarPro
         <nav className="flex flex-col gap-4 px-6">
           <Link 
             href="/farmer/dashboard" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiHome className="inline mr-2 text-lg align-middle" /> Dashboard
           </Link>
           <Link 
             href="/farmer/productview" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/productview") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/productview") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiBox className="inline mr-2 text-lg align-middle" /> Products
           </Link>
           <Link 
             href="/farmer/orders" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/orders") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/orders") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiShoppingCart className="inline mr-2 text-lg align-middle" /> Orders
           </Link>
           <Link 
             href="/farmer/messages" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/messages") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/messages") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiMessageCircle className="inline mr-2 text-lg align-middle" /> Messages
           </Link>
           <Link 
             href="/farmer/notification" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/notification") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/notification") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiBell className="inline mr-2 text-lg align-middle" /> Notifications
           </Link>
           <Link 
             href="/farmer/report" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/report") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/report") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiBarChart2 className="inline mr-2 text-lg align-middle" /> Reports And Analytics
           </Link>
           <Link 
             href="/farmer/profile" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/profile") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/profile") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiUser className="inline mr-2 text-lg align-middle" /> Profile
           </Link>
           <Link 
             href="/farmer/settings" 
-            className={`hover:text-green-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/settings") ? "text-green-400 bg-green-900/10 font-bold" : ""}`}
+            className={`hover:text-orange-400 py-2 rounded transition-colors duration-200 ${isActive("/farmerdashboard/settings") ? "text-orange-400 bg-orange-900/10 font-bold" : ""}`}
             onClick={handleLinkClick}
           >
             <FiSettings className="inline mr-2 text-lg align-middle" /> Settings
@@ -110,13 +110,13 @@ export default function FarmerSidebar({ onClose, open = true }: FarmerSidebarPro
       <div className="flex flex-col gap-2 border-t border-gray-600">
         {/* Back to Home Button - edge-to-edge */}
           <div className="mb-4">
-             <Link href="/" className="flex items-center gap-2 hover:text-green-500 text-white font-semibold rounded px-4 py-2 transition-colors duration-200"> {/* Removed w-full and justify-center. By default, flex items are aligned to the start */}
+             <Link href="/" className="flex items-center gap-2 hover:text-orange-500 text-white font-semibold rounded px-4 py-2 transition-colors duration-200"> {/* Removed w-full and justify-center. By default, flex items are aligned to the start */}
              <FiHome className="inline mr-2 text-lg align-middle" /> Back to home
             
             </Link>
           </div>
         <button 
-          className="hover:text-green-400 py-2 flex items-center gap-2 w-full text-left px-4"
+          className="hover:text-orange-400 py-2 flex items-center gap-2 w-full text-left px-4"
           onClick={handleLogout}
         >
           <FiLogOut className="inline mr-2 text-lg align-middle" /> Logout

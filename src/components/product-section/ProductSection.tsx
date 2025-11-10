@@ -47,7 +47,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
   };
 
   // Group products by subcategory if grouped is true
-  const groupedProducts = grouped 
+  const groupedProducts = grouped
     ? products.reduce((groups: { [key: string]: Product[] }, product) => {
         const key = product.subcategory || 'Other';
         if (!groups[key]) groups[key] = [];
@@ -66,7 +66,6 @@ const ProductSection: React.FC<ProductSectionProps> = ({
   return (
     <section className="mt-8 relative">
       {title && <h2 className="text-2xl font-semibold mb-4">{title}</h2>}
-
       {scrollable && (
         <>
           <button
@@ -83,10 +82,13 @@ const ProductSection: React.FC<ProductSectionProps> = ({
           </button>
         </>
       )}
-
       <div
         ref={scrollRef}
-        className={`${scrollable ? `${styles.scrollContainer} snap-x snap-mandatory scroll-smooth` : ''}`}
+        className={`${
+          scrollable
+            ? `${styles.scrollContainer} snap-x snap-mandatory scroll-smooth`
+            : ''
+        }`}
       >
         {scrollable ? (
           // Scrollable layout with responsive card widths
@@ -111,41 +113,39 @@ const ProductSection: React.FC<ProductSectionProps> = ({
         ) : grouped ? (
           // Grouped layout for ProductListPage
           <div className="space-y-8">
-            {Object.entries(groupedProducts).map(([subcategory, categoryProducts]) => (
-              <div key={subcategory}>
-                {/* Section header */}
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    {subcategory}
-                  </h2>
-                  {categoryProducts.some(p => p.price && p.price < 50) && (
-                    <span className="bg-red-100 text-red-600 text-xs font-medium px-2 py-1 rounded">
-                      SALE
-                    </span>
-                  )}
+            {Object.entries(groupedProducts).map(
+              ([subcategory, categoryProducts]) => (
+                <div key={subcategory}>
+                  {/* Section header */}
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xl font-semibold text-gray-900">
+                      {subcategory}
+                    </h2>
+                    {categoryProducts.some((p) => p.price && p.price < 50) && (
+                      <span className="bg-red-100 text-red-600 text-xs font-medium px-2 py-1 rounded">
+                        SALE
+                      </span>
+                    )}
+                  </div>
+                  {/* Products Grid - Fixed width like home page */}
+                  <div className={getGridClasses()}>
+                    {categoryProducts.map((product) => (
+                      <div key={product.id} className="w-full max-w-xs">
+                        <Link href={`/product/${product.id}`}>
+                          <div
+                            tabIndex={0}
+                            aria-label={`View details for ${product.title}`}
+                            style={{ display: 'block', height: '100%' }}
+                          >
+                            <ProductCard {...product} size={cardSize} />
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                
-                {/* Products Grid - Fixed width like home page */}
-                <div className={getGridClasses()}>
-                  {categoryProducts.map((product) => (
-                    <div key={product.id} className="w-full max-w-xs">
-                      <Link href={`/product/${product.id}`}>
-                        <div
-                          tabIndex={0}
-                          aria-label={`View details for ${product.title}`}
-                          style={{ display: 'block', height: '100%' }}
-                        >
-                          <ProductCard 
-                            {...product} 
-                            size={cardSize}
-                          />
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         ) : (
           // Regular grid layout
@@ -158,10 +158,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
                     aria-label={`View details for ${product.title}`}
                     style={{ display: 'block', height: '100%' }}
                   >
-                    <ProductCard 
-                      {...product} 
-                      size={cardSize}
-                    />
+                    <ProductCard {...product} size={cardSize} />
                   </div>
                 </Link>
               </div>
@@ -174,3 +171,4 @@ const ProductSection: React.FC<ProductSectionProps> = ({
 };
 
 export default ProductSection;
+

@@ -1,56 +1,63 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, Suspense } from 'react'
-import { FiSearch } from 'react-icons/fi'
-import { useSearchParams } from 'next/navigation'
-import { blogPosts, categories } from '@/data/blogData'
-import BlogCard from '@/components/blog/BlogCard'
-import FeaturedPost from '@/components/blog/FeaturedPost'
+import React, { useState, useEffect, Suspense } from "react";
+import { FiSearch } from "react-icons/fi";
+import { useSearchParams } from "next/navigation";
+import { blogPosts, categories } from "@/data/blogData";
+import BlogCard from "@/components/blog/BlogCard";
+import FeaturedPost from "@/components/blog/FeaturedPost";
 
 function BlogContent() {
-  const searchParams = useSearchParams()
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [currentPage, setCurrentPage] = useState(1)
-  const postsPerPage = 6
+  const searchParams = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
 
   useEffect(() => {
-    const categoryParam = searchParams.get('category')
+    const categoryParam = searchParams.get("category");
     if (categoryParam && categories.includes(categoryParam)) {
-      setSelectedCategory(categoryParam)
+      setSelectedCategory(categoryParam);
     }
-  }, [searchParams])
+  }, [searchParams]);
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
+  const filteredPosts = blogPosts.filter((post) => {
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
-  const startIndex = (currentPage - 1) * postsPerPage
-  const currentPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage)
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const currentPosts = filteredPosts.slice(
+    startIndex,
+    startIndex + postsPerPage
+  );
 
-  const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
+  const featuredPost = blogPosts.find((post) => post.featured) || blogPosts[0];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            AgriLink <span className="text-green-600">Blog</span>
+            farmMart <span className="text-orange-600">Blog</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the latest insights, tips, and stories from the world of agriculture and sustainable farming
+            Discover the latest insights, tips, and stories from the world of
+            agriculture and sustainable farming
           </p>
         </div>
 
         {/* Featured Post */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Article</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Featured Article
+          </h2>
           <FeaturedPost post={featuredPost} />
         </div>
 
@@ -64,22 +71,22 @@ function BlogContent() {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => {
-                  setSearchTerm(e.target.value)
-                  setCurrentPage(1)
+                  setSearchTerm(e.target.value);
+                  setCurrentPage(1);
                 }}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => {
-                  setSelectedCategory('all')
-                  setCurrentPage(1)
+                  setSelectedCategory("all");
+                  setCurrentPage(1);
                 }}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  selectedCategory === 'all'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                  selectedCategory === "all"
+                    ? "bg-orange-600 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 All
@@ -88,13 +95,13 @@ function BlogContent() {
                 <button
                   key={category}
                   onClick={() => {
-                    setSelectedCategory(category)
-                    setCurrentPage(1)
+                    setSelectedCategory(category);
+                    setCurrentPage(1);
                   }}
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     selectedCategory === category
-                      ? 'bg-green-600 text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      ? "bg-orange-600 text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
                   }`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -115,7 +122,7 @@ function BlogContent() {
         {totalPages > 1 && (
           <div className="flex justify-center items-center space-x-2">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
               className="px-4 py-2 text-gray-500 bg-white rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -127,15 +134,17 @@ function BlogContent() {
                 onClick={() => setCurrentPage(page)}
                 className={`px-4 py-2 rounded-lg font-medium ${
                   currentPage === page
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? "bg-orange-600 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 {page}
               </button>
             ))}
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
               disabled={currentPage === totalPages}
               className="px-4 py-2 text-gray-500 bg-white rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -150,17 +159,19 @@ function BlogContent() {
             <div className="text-gray-400 mb-4">
               <FiSearch className="w-12 h-12 mx-auto" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              No articles found
+            </h3>
             <p className="text-gray-600 mb-4">
               Try adjusting your search terms or browse different categories
             </p>
             <button
               onClick={() => {
-                setSearchTerm('')
-                setSelectedCategory('all')
-                setCurrentPage(1)
+                setSearchTerm("");
+                setSelectedCategory("all");
+                setCurrentPage(1);
               }}
-              className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
             >
               Clear Filters
             </button>
@@ -168,13 +179,21 @@ function BlogContent() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 export default function BlogPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
       <BlogContent />
     </Suspense>
-  )
+  );
 }
+
+

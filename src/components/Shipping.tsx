@@ -10,22 +10,22 @@ interface Shipping {
 const Shipping: React.FC = () => {
   const benefits: Shipping[] = [
     {
-      icon: <Truck className="w-8 h-8 text-green-500" />,
+      icon: <Truck className="w-8 h-8 text-orange-500" />,
       title: "Free Shipping",
       description: "Free shipping on all your order"
     },
     {
-      icon: <Headphones className="w-8 h-8 text-green-500" />,
+      icon: <Headphones className="w-8 h-8 text-orange-500" />,
       title: "Customer Support 24/7",
       description: "Instant access to Support"
     },
     {
-      icon: <Shield className="w-8 h-8 text-green-500" />,
+      icon: <Shield className="w-8 h-8 text-orange-500" />,
       title: "100% Secure Payment",
       description: "We ensure your money is save"
     },
     {
-      icon: <RotateCcw className="w-8 h-8 text-green-500" />,
+      icon: <RotateCcw className="w-8 h-8 text-orange-500" />,
       title: "Money-Back Guarantee",
       description: "30 Days Money-Back Guarantee"
     }
@@ -37,7 +37,7 @@ const Shipping: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex flex-col items-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-8">
-              <div className="flex-shrink-0 p-4 bg-green-50 rounded-lg mb-6">
+              <div className="flex-shrink-0 p-4 bg-orange-50 rounded-lg mb-6">
                 {benefit.icon}
               </div>
               <div className="text-center w-full">

@@ -107,3 +107,4 @@ const authSlice = createSlice({
 export const { signupSuccess, loginSuccess, logout, setUserPhoto } =
   authSlice.actions;
 export default authSlice.reducer;
+

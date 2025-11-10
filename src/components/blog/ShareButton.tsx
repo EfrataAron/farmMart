@@ -34,10 +34,11 @@ export default function ShareButton({ title, excerpt }: ShareButtonProps) {
   return (
     <button
       onClick={handleShare}
-      className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+      className="flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
     >
       <FiShare2 className="mr-2" />
       Share
     </button>
   )
 }
+

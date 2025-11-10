@@ -1,4 +1,4 @@
-import ProductSection from '@/components/product-section/ProductSection';
+import ProductSection from './product-section/ProductSection';
 import { topProductsData } from '@/data/productData';
  
 const TopProducts = () => (

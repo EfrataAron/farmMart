@@ -35,8 +35,8 @@ export default function OrderSuccessModal({
 
         {/* Content */}
         <div className="p-6 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <FiCheck className="w-8 h-8 text-green-600" />
+          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FiCheck className="w-8 h-8 text-orange-600" />
           </div>
           
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
@@ -48,7 +48,7 @@ export default function OrderSuccessModal({
             <div className="text-sm text-gray-600 mb-1">Order Number</div>
             <div className="font-bold text-lg">{orderNumber}</div>
             <div className="text-sm text-gray-600 mt-2">Total Amount</div>
-            <div className="font-bold text-green-600 text-xl">
+            <div className="font-bold text-orange-600 text-xl">
               UGX {totalAmount.toLocaleString()}
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function OrderSuccessModal({
           
           <button
             onClick={onClose}
-            className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold"
+            className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition font-semibold"
           >
             Continue Shopping
           </button>
@@ -69,3 +69,4 @@ export default function OrderSuccessModal({
     </div>
   )
 }
+

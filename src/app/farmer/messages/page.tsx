@@ -164,7 +164,7 @@ export default function FarmerMessagesPage() {
             placeholder="Search messages..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-2 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="w-full pl-2 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
         </div>
       </div>
@@ -194,13 +194,13 @@ export default function FarmerMessagesPage() {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm font-medium text-gray-900">{message.sender.name}</div>
                     <div className="text-sm text-gray-500">{message.sender.email}</div>
-                    <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${message.sender.role === "farmer" ? "bg-green-100 text-green-800" : "bg-blue-100 text-blue-800"}`}>{message.sender.role}</span>
+                    <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${message.sender.role === "farmer" ? "bg-orange-100 text-orange-800" : "bg-blue-100 text-blue-800"}`}>{message.sender.role}</span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatTimestamp(message.timestamp)}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex items-center gap-2">
                       <button onClick={() => handleViewMessage(message)} className="text-blue-600 hover:text-blue-900" title="View Message"><FiEye className="w-4 h-4" /></button>
-                      <button onClick={() => handleReply(message)} className="text-green-600 hover:text-green-900" title="Reply"><FiCornerUpLeft className="w-4 h-4" /></button>
+                      <button onClick={() => handleReply(message)} className="text-orange-600 hover:text-orange-900" title="Reply"><FiCornerUpLeft className="w-4 h-4" /></button>
                       <button onClick={() => handleDelete(message.id)} className="text-red-600 hover:text-red-900" title="Delete"><FiTrash2 className="w-4 h-4" /></button>
                     </div>
                   </td>
@@ -229,7 +229,7 @@ export default function FarmerMessagesPage() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">{selectedMessage.subject}</h3>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${selectedMessage.sender.role === "farmer" ? "bg-green-100 text-green-800" : "bg-blue-100 text-blue-800"}`}>{selectedMessage.sender.role}</span>
+                  <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${selectedMessage.sender.role === "farmer" ? "bg-orange-100 text-orange-800" : "bg-blue-100 text-blue-800"}`}>{selectedMessage.sender.role}</span>
                   <span className="text-xs text-gray-400">{formatTimestamp(selectedMessage.timestamp)}</span>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function FarmerMessagesPage() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 pt-6 border-t border-gray-200">
-                <button onClick={() => { setIsViewModalOpen(false); handleReply(selectedMessage); }} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"><FiCornerUpLeft className="w-4 h-4" />Reply</button>
+                <button onClick={() => { setIsViewModalOpen(false); handleReply(selectedMessage); }} className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors flex items-center gap-2"><FiCornerUpLeft className="w-4 h-4" />Reply</button>
                 <button onClick={() => { handleDelete(selectedMessage.id); }} className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"><FiTrash2 className="w-4 h-4" />Delete</button>
                 <button onClick={() => setIsViewModalOpen(false)} className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Close</button>
               </div>
@@ -275,11 +275,11 @@ export default function FarmerMessagesPage() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">Your Reply</label>
-                <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} placeholder="Type your reply here..." rows={6} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                <textarea value={replyContent} onChange={(e) => setReplyContent(e.target.value)} placeholder="Type your reply here..." rows={6} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" />
               </div>
               <div className="flex justify-end gap-3">
                 <button onClick={() => setIsReplyModalOpen(false)} className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
-                <button onClick={handleSendReply} disabled={!replyContent.trim()} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"><FiSend className="w-4 h-4" />Send Reply</button>
+                <button onClick={handleSendReply} disabled={!replyContent.trim()} className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"><FiSend className="w-4 h-4" />Send Reply</button>
               </div>
             </div>
           </div>

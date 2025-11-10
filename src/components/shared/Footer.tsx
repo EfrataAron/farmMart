@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                 <span className="text-white font-bold text-lg sm:text-xl">
                   {/* Logo */}
                   <div className="flex items-center space-x-3 min-w-fit flex-shrink-0">
-                    <div className="bg-green-600 p-2 rounded-full">
+                    <div className="bg-orange-600 p-2 rounded-full">
                       <BiLeaf className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -153,3 +153,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

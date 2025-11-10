@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 
 export default function ProductViewPage() {
-  const products = useSelector((state: RootState) => state.products.products);
+  const products = useSelector((state: RootState) => state.products.items) || [];
   return (
     <main className="flex-1 bg-[#F7F9FA] py-8 px-2 md:px-8">
       <div className="max-w-7xl mx-auto">
@@ -15,14 +15,14 @@ export default function ProductViewPage() {
         {/* Top Cards */}
         <div className="flex flex-wrap gap-6 mb-10">
           <Link href="/farmer/addproduct" className="flex-1 min-w-[220px] max-w-sm">
-            <div className="bg-green-50 border-2 border-green-400 rounded-xl shadow p-8 min-h-[180px] flex flex-col items-center justify-center cursor-pointer hover:bg-green-100 hover:ring-2 hover:ring-green-400 hover:shadow-lg transition">
-              <FiUserPlus className="text-green-500 text-4xl mb-4" />
+            <div className="bg-orange-50 border-2 border-orange-400 rounded-xl shadow p-8 min-h-[180px] flex flex-col items-center justify-center cursor-pointer hover:bg-orange-100 hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition">
+              <FiUserPlus className="text-orange-500 text-4xl mb-4" />
               <div className="font-bold text-xl text-center">Add<br /><span className="font-normal text-lg">Product</span></div>
             </div>
           </Link>
           <Link href="/farmer/productlist" className="flex-1 min-w-[220px] max-w-sm">
-            <div className="bg-white rounded-xl shadow p-8 min-h-[180px] flex flex-col items-center justify-center cursor-pointer hover:bg-green-50 hover:ring-2 hover:ring-green-400 hover:shadow-lg transition">
-              <FiList className="text-green-500 text-4xl mb-4" />
+            <div className="bg-white rounded-xl shadow p-8 min-h-[180px] flex flex-col items-center justify-center cursor-pointer hover:bg-orange-50 hover:ring-2 hover:ring-orange-400 hover:shadow-lg transition">
+              <FiList className="text-orange-500 text-4xl mb-4" />
               <div className="font-bold text-xl text-center">Product<br /><span className="font-normal text-lg">Listing</span></div>
             </div>
           </Link>

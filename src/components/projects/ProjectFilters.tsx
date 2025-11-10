@@ -67,7 +67,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
         <select
           value={filters.sortBy}
           onChange={(e) => handleSortChange(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
           {sortOptions.map((option) => (
             <option key={option.value} value={option.value}>
@@ -93,7 +93,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                   value={status.value}
                   checked={filters.status === status.value}
                   onChange={() => handleStatusChange(status.value as ProjectStatus | 'all')}
-                  className="w-4 h-4 text-green-600 focus:ring-green-500 focus:ring-2"
+                  className="w-4 h-4 text-orange-600 focus:ring-orange-500 focus:ring-2"
                 />
                 <span className="ml-3 text-sm text-gray-700">{status.label}</span>
               </div>
@@ -165,3 +165,4 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 };
 
 export default ProjectFilters;
+

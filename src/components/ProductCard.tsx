@@ -137,7 +137,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         ) : (
           <AiOutlineShoppingCart
             onClick={handleAddToCart}
-            className="text-gray-600 hover:text-green-700 cursor-pointer text-2xl transition-colors"
+            className="text-gray-600 hover:text-orange-700 cursor-pointer text-2xl transition-colors"
           />
         )}
       </div>

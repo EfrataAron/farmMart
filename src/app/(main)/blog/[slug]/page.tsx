@@ -1,60 +1,100 @@
-import React from 'react'
-import { FiCalendar, FiUser, FiClock, FiArrowLeft, FiTag } from 'react-icons/fi'
-import Link from 'next/link'
-import Image from 'next/image'
-import { blogPosts } from '@/data/blogData'
-import { notFound } from 'next/navigation'
-import ShareButton from '@/components/blog/ShareButton'
+import React from "react";
+import {
+  FiCalendar,
+  FiUser,
+  FiClock,
+  FiArrowLeft,
+  FiTag,
+} from "react-icons/fi";
+import Link from "next/link";
+import Image from "next/image";
+import { blogPosts } from "@/data/blogData";
+import { notFound } from "next/navigation";
+import ShareButton from "@/components/blog/ShareButton";
 
 interface BlogPostPageProps {
   params: Promise<{
-    slug: string
-  }>
+    slug: string;
+  }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const resolvedParams = await params
-  const post = blogPosts.find(p => p.slug === resolvedParams.slug)
-  
+  const resolvedParams = await params;
+  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
+
   if (!post) {
-    notFound()
+    notFound();
   }
 
   const relatedPosts = blogPosts
-    .filter(p => p.id !== post.id && p.category === post.category)
-    .slice(0, 3)
+    .filter((p) => p.id !== post.id && p.category === post.category)
+    .slice(0, 3);
 
   const formatContent = (content: string) => {
-    return content.split('\n').map((line, index) => {
-      if (line.startsWith('# ')) {
-        return <h1 key={index} className="text-4xl font-bold text-gray-900 mb-6 mt-8">{line.slice(2)}</h1>
-      } else if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-3xl font-bold text-gray-900 mb-4 mt-8">{line.slice(3)}</h2>
-      } else if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-2xl font-bold text-gray-900 mb-3 mt-6">{line.slice(4)}</h3>
-      } else if (line.startsWith('#### ')) {
-        return <h4 key={index} className="text-xl font-bold text-gray-900 mb-2 mt-4">{line.slice(5)}</h4>
-      } else if (line.startsWith('**') && line.endsWith('**')) {
-        return <p key={index} className="font-bold text-gray-900 mb-2">{line.slice(2, -2)}</p>
-      } else if (line.startsWith('- ')) {
-        return <li key={index} className="text-gray-700 mb-1 ml-4">{line.slice(2)}</li>
-      } else if (line.trim() === '') {
-        return <br key={index} />
+    return content.split("\n").map((line, index) => {
+      if (line.startsWith("# ")) {
+        return (
+          <h1
+            key={index}
+            className="text-4xl font-bold text-gray-900 mb-6 mt-8"
+          >
+            {line.slice(2)}
+          </h1>
+        );
+      } else if (line.startsWith("## ")) {
+        return (
+          <h2
+            key={index}
+            className="text-3xl font-bold text-gray-900 mb-4 mt-8"
+          >
+            {line.slice(3)}
+          </h2>
+        );
+      } else if (line.startsWith("### ")) {
+        return (
+          <h3
+            key={index}
+            className="text-2xl font-bold text-gray-900 mb-3 mt-6"
+          >
+            {line.slice(4)}
+          </h3>
+        );
+      } else if (line.startsWith("#### ")) {
+        return (
+          <h4 key={index} className="text-xl font-bold text-gray-900 mb-2 mt-4">
+            {line.slice(5)}
+          </h4>
+        );
+      } else if (line.startsWith("**") && line.endsWith("**")) {
+        return (
+          <p key={index} className="font-bold text-gray-900 mb-2">
+            {line.slice(2, -2)}
+          </p>
+        );
+      } else if (line.startsWith("- ")) {
+        return (
+          <li key={index} className="text-gray-700 mb-1 ml-4">
+            {line.slice(2)}
+          </li>
+        );
+      } else if (line.trim() === "") {
+        return <br key={index} />;
       } else {
-        return <p key={index} className="text-gray-700 mb-4 leading-relaxed">{line}</p>
+        return (
+          <p key={index} className="text-gray-700 mb-4 leading-relaxed">
+            {line}
+          </p>
+        );
       }
-    })
-  }
-
-
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
         {/* Back Button */}
         <div className="mb-6">
-          <Link 
+          <Link
             href="/blog"
             className="inline-flex items-center text-green-600 hover:text-green-700 font-medium"
           >
@@ -112,15 +152,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="text-xl text-gray-600 mb-8 leading-relaxed">
                 {post.excerpt}
               </div>
-              
-              <div className="space-y-4">
-                {formatContent(post.content)}
-              </div>
+
+              <div className="space-y-4">{formatContent(post.content)}</div>
             </div>
 
             {/* Tags */}
             <div className="mt-8 pt-6 border-t border-gray-100">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3">Tags:</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                Tags:
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span
@@ -138,7 +178,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Related Articles */}
         {relatedPosts.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">
+              Related Articles
+            </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedPosts.map((relatedPost) => (
                 <Link
@@ -178,10 +220,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Newsletter Signup */}
         <div className="mt-16 bg-green-50 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Stay Updated with AgriLink
+            Stay Updated with farmMart
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Get the latest agricultural insights, tips, and market updates delivered to your inbox weekly.
+            Get the latest agricultural insights, tips, and market updates
+            delivered to your inbox weekly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
@@ -196,5 +239,5 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

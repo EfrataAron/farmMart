@@ -25,7 +25,6 @@ export default function Chatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const products = useSelector((state: RootState) => state.products.items);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -102,7 +101,7 @@ export default function Chatbot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition-all z-50"
+          className="fixed bottom-6 right-6 bg-orange-600 text-white p-4 rounded-full shadow-lg hover:bg-orange-700 transition-all z-50"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -113,14 +112,14 @@ export default function Chatbot() {
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 h-[500px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200">
           {/* Header */}
-          <div className="bg-green-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="bg-orange-600 text-white p-4 rounded-t-lg flex justify-between items-center">
             <div>
               <h3 className="font-semibold">FarmMart Assistant</h3>
-              <p className="text-xs text-green-100">Always here to help</p>
+              <p className="text-xs text-orange-100">Always here to help</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-green-700 p-1 rounded"
+              className="hover:bg-orange-700 p-1 rounded"
               aria-label="Close chat"
             >
               <X size={20} />
@@ -137,7 +136,7 @@ export default function Chatbot() {
                 <div
                   className={`max-w-[80%] p-3 rounded-lg ${
                     message.sender === 'user'
-                      ? 'bg-green-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : 'bg-gray-100 text-gray-800'
                   }`}
                 >
@@ -163,11 +162,11 @@ export default function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <button
                 onClick={handleSend}
-                className="bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition-colors"
+                className="bg-orange-600 text-white p-2 rounded-lg hover:bg-orange-700 transition-colors"
                 aria-label="Send message"
               >
                 <Send size={20} />
@@ -179,3 +178,4 @@ export default function Chatbot() {
     </>
   );
 }
+

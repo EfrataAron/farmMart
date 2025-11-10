@@ -37,7 +37,7 @@ const ProjectCategoryCard: React.FC<ProjectCategoryCardProps> = ({
             </div>
           </div>
           
-          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
             {title}
           </h3>
           
@@ -45,7 +45,7 @@ const ProjectCategoryCard: React.FC<ProjectCategoryCardProps> = ({
             {description}
           </p>
           
-          <div className="flex items-center text-green-600 text-sm font-medium group-hover:gap-2 transition-all duration-300">
+          <div className="flex items-center text-orange-600 text-sm font-medium group-hover:gap-2 transition-all duration-300">
             <span>Explore Projects</span>
             <FiArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
           </div>
@@ -56,3 +56,4 @@ const ProjectCategoryCard: React.FC<ProjectCategoryCardProps> = ({
 };
 
 export default ProjectCategoryCard;
+

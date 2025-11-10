@@ -1,45 +1,36 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface Product {
-  id: number;
-  name?: string;
-  title?: string;
-  category: string;
+interface Product {
+  id: string;
+  name: string;
   price: number;
   description?: string;
-  quantity?: number;
-  status?: string;
-  images?: string[];
-  imageNames?: string[];
-  rating: number;
-  subtitle?: string;
-  subheading?: string;
   image?: string;
-  date?: string;
-  stock?: string;
-  inStock?: boolean;
+  category?: string;
+  farmerId?: string;
 }
 
 interface ProductState {
-  products: Product[];
+  currentProduct: Product | null;
 }
 
 const initialState: ProductState = {
-  products: [],
+  currentProduct: null,
 };
 
 const productSlice = createSlice({
-  name: 'products',
+  name: 'product',
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<Product>) => {
-      state.products.push(action.payload);
+    setProduct: (state, action: PayloadAction<Product>) => {
+      state.currentProduct = action.payload;
     },
-    setProducts: (state, action: PayloadAction<Product[]>) => {
-      state.products = action.payload;
+    clearProduct: (state) => {
+      state.currentProduct = null;
     },
   },
 });
 
-export const { addProduct, setProducts } = productSlice.actions;
-export default productSlice.reducer; 
+export const { setProduct, clearProduct } = productSlice.actions;
+export default productSlice.reducer;
+

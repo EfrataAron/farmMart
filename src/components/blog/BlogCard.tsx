@@ -47,7 +47,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           </div>
           <Link
             href={`/blog/${post.slug}`}
-            className="text-green-600 hover:text-green-700 font-semibold"
+            className="text-orange-600 hover:text-orange-700 font-semibold"
             aria-label={`Read more about ${post.title}`}
           >
             Read More →
@@ -57,3 +57,4 @@ export default function BlogCard({ post }: BlogCardProps) {
     </article>
   )
 }
+

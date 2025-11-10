@@ -239,14 +239,14 @@ export default function OrderHistoryPage() {
                   <td className="py-2 font-mono">{order.id}</td>
                   <td className="py-2">{order.date}</td>
                   <td className="py-2">
-                    <span className={`px-2 py-1 rounded text-xs font-semibold ${order.status === 'Delivered' ? 'bg-green-100 text-green-700' : order.status === 'Shipped' ? 'bg-yellow-100 text-yellow-700' : order.status === 'Pending' ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700'}`}>{order.status}</span>
+                    <span className={`px-2 py-1 rounded text-xs font-semibold ${order.status === 'Delivered' ? 'bg-orange-100 text-orange-700' : order.status === 'Shipped' ? 'bg-yellow-100 text-yellow-700' : order.status === 'Pending' ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700'}`}>{order.status}</span>
                   </td>
                   <td className="py-2 font-semibold">UGX {order.total.toLocaleString()}</td>
                   <td className="py-2">{order.items} item{order.items > 1 ? 's' : ''}</td>
                   <td className="py-2">{order.payment}</td>
                   <td className="py-2">{order.address}</td>
                   <td className="py-2 flex gap-2">
-                    <button className="text-green-600 hover:underline font-medium">Re-order</button>
+                    <button className="text-orange-600 hover:underline font-medium">Re-order</button>
                     <button className="text-blue-600 hover:underline font-medium" onClick={() => setSelectedOrder(order)}>View</button>
                   </td>
                 </tr>
