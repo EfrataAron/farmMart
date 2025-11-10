@@ -1,0 +1,20 @@
+.scrollContainer {
+  overflow-x: auto;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge */
+  
+  /* Responsive scroll behavior */
+  @media (max-width: 640px) {
+    /* On mobile, show about 2.2 cards to hint at more content */
+    padding-right: 20px;
+  }
+  
+  @media (min-width: 641px) and (max-width: 768px) {
+    /* On tablet, show about 3.2 cards */
+    padding-right: 30px;
+  }
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+}
