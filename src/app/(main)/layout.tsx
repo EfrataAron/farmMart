@@ -4,8 +4,8 @@ import "../globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { CartProvider } from "@/contexts/CartContext";
-import { WishlistProvider } from '@/contexts/WishlistContext';
-import { Providers } from '@/app/providers'
+import { WishlistProvider } from "@/contexts/WishlistContext";
+import { Providers } from "@/app/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AgriLink",
-  description: "AgriLink is an agriculture e-commerce platform connecting buyers and sellers of farm produce, inputs, and services. Shop fresh, organic, and quality agricultural products online.",
+  title: "farmMart",
+  description:
+    "farmMart is an agriculture e-commerce platform connecting buyers and sellers of farm produce, inputs, and services. Shop fresh, organic, and quality agricultural products online.",
 };
 
 export default function RootLayout({
@@ -31,19 +32,24 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="AgriLink is an agriculture e-commerce platform connecting buyers and sellers of farm produce, inputs, and services. Shop fresh, organic, and quality agricultural products online." />
-        <title>AgriLink</title>
+        <meta
+          name="description"
+          content="farmMart is an agriculture e-commerce platform connecting buyers and sellers of farm produce, inputs, and services. Shop fresh, organic, and quality agricultural products online."
+        />
+        <title>farmMart</title>
       </head>
-      <body className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable}`}
+      >
         <Providers>
-        <WishlistProvider>
-          <CartProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </CartProvider>
+          <WishlistProvider>
+            <CartProvider>
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </CartProvider>
           </WishlistProvider>
-          </Providers>
+        </Providers>
       </body>
     </html>
   );

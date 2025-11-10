@@ -28,7 +28,7 @@
 //   const onSubmit = async (data: FormValues) => {
 //     let role: 'buyer' | 'farmer' = 'buyer';
 //     if (data.email.includes('farmer')) role = 'farmer';
-    
+
 //     const user = {
 //       name: "mary",
 //       email: data.email,
@@ -42,7 +42,6 @@
 //     } else {
 //       router.push("/");
 //     }
-  
 
 //     // call an API:
 //     /*
@@ -71,7 +70,7 @@
 //     <div className="min-h-screen bg-white flex flex-col items-center justify-start">
 //       <Image
 //         src="/images/background.jpg"
-//         alt="Agrilink"
+//         alt="farmMart"
 //         width={1000}
 //         height={400}
 //         className="w-full h-64 object-cover mb-4"
@@ -82,7 +81,7 @@
 //         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
 //       >
 //         <h2 className="text-2xl font-semibold mb-2">
-//           Log into <span className="text-green-600 font-bold">Agrilink</span>
+//           Log into <span className="text-green-600 font-bold">farmMart</span>
 //         </h2>
 //         <p className="text-gray-600 mb-4">Get Started Now</p>
 
@@ -147,7 +146,6 @@
 //   );
 // }
 
-
 //using mock data
 "use client";
 import { useRouter } from "next/navigation";
@@ -157,7 +155,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "@/store/authSlice";
-import { mockUsers } from "@/data/mockUser"; 
+import { mockUsers } from "@/data/mockUser";
 
 type FormValues = {
   email: string;
@@ -230,7 +228,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-start">
       <Image
         src="/images/background.jpg"
-        alt="Agrilink"
+        alt="farmMart"
         width={1000}
         height={400}
         className="w-full h-64 object-cover mb-4"
@@ -241,7 +239,7 @@ export default function LoginPage() {
         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
       >
         <h2 className="text-2xl font-semibold mb-2">
-          Log into <span className="text-green-600 font-bold">Agrilink</span>
+          Log into <span className="text-green-600 font-bold">farmMart</span>
         </h2>
         <p className="text-gray-600 mb-4">Get Started Now</p>
 
@@ -305,7 +303,6 @@ export default function LoginPage() {
     </div>
   );
 }
-
 
 // "use client";
 // import { useRouter } from "next/navigation";
@@ -391,7 +388,7 @@ export default function LoginPage() {
 //     <div className="min-h-screen bg-white flex flex-col items-center justify-start">
 //       <Image
 //         src="/images/background.jpg"
-//         alt="Agrilink"
+//         alt="farmMart"
 //         width={1000}
 //         height={400}
 //         className="w-full h-64 object-cover mb-4"
@@ -402,7 +399,7 @@ export default function LoginPage() {
 //         className="flex flex-col gap-4 px-8 py-8 w-full max-w-xl mx-auto"
 //       >
 //         <h2 className="text-2xl font-semibold mb-2">
-//           Log into <span className="text-green-600 font-bold">Agrilink</span>
+//           Log into <span className="text-green-600 font-bold">farmMart</span>
 //         </h2>
 //         <p className="text-gray-600 mb-4">Get Started Now</p>
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -8,10 +8,11 @@ const Hero: React.FC = () => {
       {/* Top Text */}
       <div className="text-left mb-6 sm:mb-10 lg:mb-12">
         <h1 className="text-text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-600 mb-2 sm:mb-4">
-          Welcome To AgriLink
+          Welcome To farmMart
         </h1>
         <p className="text-gray-600 text-base sm:text-lg">
-          Your gateway to fresh produce, amazing deals, and all things agriculture!
+          Your gateway to fresh produce, amazing deals, and all things
+          agriculture!
         </p>
       </div>
 
@@ -31,29 +32,40 @@ const Hero: React.FC = () => {
         <div className="w-full lg:w-1/4 flex flex-row sm:flex-row lg:flex-col gap-4 lg:gap-0">
           {[
             {
-              src: '/green.jpeg',
-              alt: 'Special Deal',
-              heading: 'Special Products Deal of the Month',
-              buttonColor: 'text-green-600',
-              rounded: 'rounded-lg lg:rounded-t-lg lg:rounded-b-none',
+              src: "/green.jpeg",
+              alt: "Special Deal",
+              heading: "Special Products Deal of the Month",
+              buttonColor: "text-green-600",
+              rounded: "rounded-lg lg:rounded-t-lg lg:rounded-b-none",
             },
             {
-              src: '/fruit.jpeg',
-              alt: 'Summer Sale',
-              heading: 'Summer Sale',
-              subtext: '75% OFF only Fruit & Vegetable',
-              buttonColor: 'text-green-700',
-              rounded: 'rounded-lg lg:rounded-b-lg lg:rounded-t-none',
+              src: "/fruit.jpeg",
+              alt: "Summer Sale",
+              heading: "Summer Sale",
+              subtext: "75% OFF only Fruit & Vegetable",
+              buttonColor: "text-green-700",
+              rounded: "rounded-lg lg:rounded-b-lg lg:rounded-t-none",
             },
           ].map((promo, index) => (
             <div
               key={index}
               className={`relative flex-1 overflow-hidden shadow-lg min-h-[180px] sm:min-h-[200px] lg:min-h-0 ${promo.rounded}`}
             >
-              <Image src={promo.src} alt={promo.alt} fill className="object-cover" />
+              <Image
+                src={promo.src}
+                alt={promo.alt}
+                fill
+                className="object-cover"
+              />
               <div className="absolute inset-0 bg-opacity-40 flex flex-col justify-center items-center text-white p-3 sm:p-4 lg:p-5 text-center">
-                <h2 className="text-sm sm:text-base lg:text-lg font-semibold">{promo.heading}</h2>
-                {promo.subtext && <p className="mb-1 sm:mb-2 text-xs sm:text-sm">{promo.subtext}</p>}
+                <h2 className="text-sm sm:text-base lg:text-lg font-semibold">
+                  {promo.heading}
+                </h2>
+                {promo.subtext && (
+                  <p className="mb-1 sm:mb-2 text-xs sm:text-sm">
+                    {promo.subtext}
+                  </p>
+                )}
                 <Link
                   href="/products/all"
                   className={`bg-white ${promo.buttonColor} px-2 sm:px-3 py-1 rounded text-xs sm:text-sm cursor-pointer inline-block`}

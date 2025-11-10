@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Project, allProjectsData } from '../data/projectsData';
+import { Project, allProjectsData } from '@/data/projectsData';
 
 interface ProjectsState {
   projects: Project[];
