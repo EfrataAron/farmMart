@@ -17,6 +17,7 @@ import { BiLeaf } from "react-icons/bi";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/store";
@@ -214,6 +215,9 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="flex items-center space-x-4">
+            {/* Theme Toggle */}
+            <ThemeToggle />
+            
             {/* Search */}
             <div className="relative hidden md:block">
               {!isSearchOpen ? (
