@@ -1,127 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FarmMart 🌾
 
-## Getting Started
+A modern agricultural e-commerce platform connecting farmers directly with buyers. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
+## ✨ Features
 
-First, run the development server:
+### For Buyers
+- 🛒 **Shopping Cart & Wishlist** - Save and purchase products
+- 🔍 **Smart Search** - Find products quickly with advanced filtering
+- 💬 **AI Chatbot** - Get instant help with farming advice and product recommendations
+- 📊 **Price Trends** - Track historical crop prices to make informed decisions
+- 📅 **Crop Calendar** - View optimal planting and harvesting times
+- 👥 **Community Forum** - Connect with farmers and share knowledge
+- 📦 **Order Tracking** - Monitor your orders in real-time
 
+### For Farmers
+- 📈 **Dashboard** - Comprehensive analytics and insights
+- 🌱 **Product Management** - Add, edit, and manage your products
+- 📊 **Reports** - Track sales, revenue, and performance
+- 💼 **Profile Management** - Showcase your farm and products
+- 📬 **Order Management** - Handle customer orders efficiently
+- ⚙️ **Settings** - Customize your preferences
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/farmmart.git
+cd farmmart
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables
+Create a `.env` file in the root directory:
+```env
+API_KEY_FARM=your_groq_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** Next.js 15.3.4
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4.1.10, SASS
+- **State Management:** Redux Toolkit
+- **UI Components:** Lucide React, React Icons
+- **Charts:** Recharts
+- **Forms:** React Hook Form
+- **AI Integration:** Groq SDK (Llama 3.3)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# FarmMart
-
-A modern agricultural marketplace connecting farmers directly with buyers.
-
-## Features
-
-- 🛒 Shopping cart and wishlist functionality
-- 👨‍🌾 Farmer dashboard for product management
-- 👔 Admin panel for system oversight
-- 📦 Order tracking and management
-- 🌾 Product showcase and filtering
-- 📱 Responsive design
-
-## FarmMart folder structure
-/node_modules/              # Auto-generated directory containing all project dependencies installed via npm.
-├── public/
-│   ├── favicon.ico         # The website’s favicon, displayed in browser tabs.
-│   └── images/             # A subdirectory for static images (e.g., logos, placeholders).
+```
+farmmart/
 ├── src/
-│   ├── api/
-│   │   ├── auth.ts         # Defines functions for authentication-related API requests (e.g., login, register).
-│   │   └── user.ts         # Handles API calls related to user data (e.g., profile updates).
+│   ├── app/
+│   │   ├── (main)/          # Main marketplace pages
+│   │   │   ├── page.tsx     # Home page
+│   │   │   ├── products/    # Product listings
+│   │   │   ├── community/   # Community forum
+│   │   │   ├── price-trends/# Price analytics
+│   │   │   ├── crop-calendar/# Planting calendar
+│   │   │   └── account/     # User account
+│   │   ├── farmer/          # Farmer dashboard
+│   │   │   ├── dashboard/
+│   │   │   ├── addproduct/
+│   │   │   ├── productlist/
+│   │   │   ├── orders/
+│   │   │   ├── report/
+│   │   │   └── settings/
+│   │   └── api/
+│   │       └── chat/        # AI chatbot API
 │   ├── components/
-│   │   ├── AdminDashboard.tsx # Component for the admin dashboard UI.
-│   │   ├── BuyerDashboard.tsx # Component for the buyer dashboard UI.
-│   │   ├── FarmerDashboard.tsx # Component for the farmer dashboard UI.
-│   │   ├── Card.tsx        # A reusable card component for displaying products or orders.
-│   │   ├── Navbar.tsx      # Navigation bar with role-based links.
-│   │   └── Shared/
-│   │       ├── Header.tsx  # The header layout, importing Navbar for navigation
-│   │       ├── Header.scss # Sass file for Header
-│   │       ├── Footer.tsx  # The footer layout with site-wide information.
-│   │       └── Footer.scss # Sass file for Footer
-│   ├── pages/
-│   │   ├── _app.tsx        # The app wrapper, importing Header and Footer for all pages.
-│   │   ├── Home.tsx        # The public home page, accessible to all users.
-│   │   ├── about.tsx       # Page for about information (optional, to be implemented).
-│   │   ├── Contact.tsx     # Page for contact information (optional, to be implemented).
-│   │   ├── Login.tsx       # Page using Login.tsx component for authentication.
-│   │   ├── Register.tsx    # Page for user signup (Buyers and Farmers only).
-│   │   ├── Products.tsx    # Page for managing products.
-│   │   ├── Profile.tsx     # Page for farmer profile management.
-│   │   ├── Search.tsx      # Page for product search.
-│   │   ├── Orders.tsx      # Page for order history.
-│   │   ├── Users.tsx       # Page for user management.
-│   │   └── Reports.tsx     # Page for analytics and reports.
-│   ├── services/
-│   │   ├── authService.ts  # Handles authentication logic (login, register).
-│   │   ├── productService.ts # Manages product-related operations.
-│   │   ├── orderService.ts # Handles order-related operations.
-│   │   └── messagingService.ts # Manages messaging functionality (e.g., farmer-buyer communication).
-│   ├── utils/
-│   │   ├── api.ts          # Utility functions for API request handling.
-│   │   └── helpers.ts      # Miscellaneous helper functions (e.g., formatting, validation).
-│   ├── styles/
-│   │   ├── globals.css     # Global Tailwind styles (optional, keep as is)
-│   │   └── globals.scss    # Optional: Global Sass file with Tailwind directives
-│   └── tests/              # Optional directory for unit and integration tests.
-│       ├── component.test.tsx # Tests for React components.
-│       └── service.test.ts # Tests for service functions.
-├── server/
-│   ├── controllers/
-│   │   ├── authController.ts # Handles authentication logic (login, register).
-│   │   ├── productController.ts # Manages product CRUD operations.
-│   │   ├── orderController.ts # Handles order management.
-│   │   └── messagingController.ts # Manages messaging operations.
-│   ├── models/
-│   │   ├── User.ts         # Defines the User model.
-│   │   ├── Product.ts      # Defines the Product model.
-│   │   ├── Order.ts        # Defines the Order model.
-│   │   └── Message.ts      # Defines the Message model.
-│   ├── routes/
-│   │   ├── authRoutes.ts   # Defines authentication routes.
-│   │   ├── productRoutes.ts # Defines product routes.
-│   │   ├── orderRoutes.ts  # Defines order routes.
-│   │   └── messagingRoutes.ts # Defines messaging routes.
-│   ├── middleware/
-│   │   └── authMiddleware.ts # Middleware for authentication checks.
-│   ├── config/
-│   │   └── db.ts           # Database connection configuration.
-│   └── server.ts           # Main Express server file, integrating routes and middleware.
-├── .env                    # Stores environment variables (e.g., database URL, API keys).
-├── tsconfig.json           # TypeScript configuration file.
-├── next.config.js          # Next.js configuration file.
-├── package.json            # Project metadata, dependencies, and scripts.
-├── package-lock.json       # Locks dependency versions for consistency.
-├── postcss.config.js       # PostCSS configuration for Tailwind CSS.
-├── tailwind.config.js      # Tailwind CSS customization file.
-└── README.md               # Project documentation. 
+│   │   ├── shared/          # Shared components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Chatbot.tsx
+│   │   ├── farmer/          # Farmer components
+│   │   └── product-section/ # Product displays
+│   ├── contexts/            # React contexts
+│   │   ├── CartContext.tsx
+│   │   ├── WishlistContext.tsx
+│   │   └── ThemeContext.tsx
+│   ├── store/               # Redux store
+│   │   ├── authSlice.ts
+│   │   ├── productsSlice.ts
+│   │   ├── blogSlice.ts
+│   │   └── projectsSlice.ts
+│   └── data/                # Mock data
+├── public/
+│   └── images/
+├── .env
+├── package.json
+└── README.md
+```
+
+## 🎨 Key Features Explained
+
+### AI Chatbot
+Powered by Groq's Llama 3.3 model, the chatbot provides:
+- Farming advice and tips
+- Product recommendations
+- Order and shipping information
+- General customer support
+
+### Price Trends
+Interactive charts showing:
+- Historical crop prices
+- Monthly price changes
+- Sell recommendations based on trends
+- Market insights
+
+### Crop Calendar
+Helps farmers plan with:
+- Monthly planting schedules
+- Harvesting timelines
+- Growing tips for each crop
+- Reminder system
+
+### Community Forum
+Connect and share:
+- Ask questions
+- Share farming tips
+- Find buyers/suppliers
+- Category-based discussions
+
+## 🔧 Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm start        # Start production server
+npm run lint     # Run ESLint
+npm run lint:fix # Fix linting issues
+```
+
+## 🌐 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `API_KEY_FARM` | Groq API key for AI chatbot | Yes |
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 👥 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+
+For support or inquiries, reach out at support@farmmart.com
+
+---
+
+Built with ❤️ for farmers and agricultural communities
