@@ -17,31 +17,55 @@
   overflow: hidden;
 }
 
-/* Dark Mode Variables */
+/* Light Mode - Day Farming */
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f9fafb;
   --text-primary: #111827;
   --text-secondary: #6b7280;
   --border-color: #e5e7eb;
-  --accent-color: #059669;
+  --accent-color: #ea580c;
 }
 
-/* Dark mode overrides using .dark class */
+/* Dark Mode - Night Harvest Theme 🌙 */
 .dark {
-  --bg-primary: #1f2937;
-  --bg-secondary: #111827;
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --border-color: #374151;
-  --accent-color: #10b981;
+  --bg-primary: #1a1f2e;
+  --bg-secondary: #0f1419;
+  --text-primary: #f0f4f8;
+  --text-secondary: #a8b2c1;
+  --border-color: #2d3748;
+  --accent-color: #fb923c;
+
+  /* Night Harvest specific colors */
+  --night-sky: #0f1419;
+  --moonlight: #cbd5e1;
+  --harvest-orange: #fb923c;
+  --field-green: #10b981;
 }
 
-/* Base Dark Mode Styles - only apply when .dark class is present */
+/* Night Harvest Mode - Base Styles */
 html.dark,
 html.dark body {
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  background-color: var(--night-sky);
+  color: var(--moonlight);
+  /* Subtle starry background effect */
+  background-image: radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 200%;
+  animation: twinkle 20s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 html.dark .bg-white {
@@ -79,7 +103,8 @@ html.dark .admin-card {
 
 /* Fix hover states in dark mode */
 html.dark tr:hover {
-  background-color: #374151 !important; /* Use a darker gray for better contrast */
+  background-color: #374151 !important;
+  /* Use a darker gray for better contrast */
 }
 
 html.dark .hover\:bg-gray-50:hover {
@@ -105,7 +130,8 @@ html.dark tr:hover .text-gray-700,
 html.dark .hover\:bg-gray-50:hover .text-gray-500,
 html.dark .hover\:bg-gray-50:hover .text-gray-600,
 html.dark .hover\:bg-gray-50:hover .text-gray-700 {
-  color: #d1d5db !important; /* Lighter gray for better contrast on dark hover background */
+  color: #d1d5db !important;
+  /* Lighter gray for better contrast on dark hover background */
 }
 
 /* Additional dark mode table fixes */
@@ -153,4 +179,3 @@ html.dark table .text-yellow-600 {
 html.dark table .text-red-600 {
   color: #dc2626 !important;
 }
-
