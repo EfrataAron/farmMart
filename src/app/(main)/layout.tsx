@@ -6,6 +6,7 @@ import Footer from "@/components/shared/Footer";
 import Chatbot from "@/components/shared/Chatbot";
 import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Providers } from "@/app/providers";
 
 const geistSans = Geist({
@@ -42,18 +43,19 @@ export default function RootLayout({
       <body
         className={`flex flex-col min-h-screen ${geistSans.variable} ${geistMono.variable}`}
       >
-        <Providers>
-          <WishlistProvider>
-            <CartProvider>
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <Chatbot />
-            </CartProvider>
-          </WishlistProvider>
-        </Providers>
+        <ThemeProvider>
+          <Providers>
+            <WishlistProvider>
+              <CartProvider>
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <Chatbot />
+              </CartProvider>
+            </WishlistProvider>
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
