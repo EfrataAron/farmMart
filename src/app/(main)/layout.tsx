@@ -8,6 +8,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Providers } from "@/app/providers";
+import ProductsInitializer from "@/components/ProductsInitializer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Providers>
+            <ProductsInitializer />
             <WishlistProvider>
               <CartProvider>
                 <Header />

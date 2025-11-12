@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
       links: [
         { label: "Contact", href: "/contact" },
         { label: "Faqs", href: "/faqs" },
-        { label: "Terms & Condition", href: "/terms-conditions" },
+        { label: "Terms & Condition", href: "/terms-condition" },
         { label: "Privacy Policy", href: "/privacy-policy" },
       ],
     },
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
                 Privacy Policy
               </Link>
               <Link
-                href="/terms-conditions"
+                href="/terms-condition"
                 className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200"
               >
                 Terms and conditions

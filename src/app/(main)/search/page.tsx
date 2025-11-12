@@ -11,7 +11,9 @@ import { FiSearch } from 'react-icons/fi';
 export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
-  const products = useSelector((state: RootState) => state.products.items) || [];
+  const products = useSelector((state: RootState) => 
+    state.products?.items || (state.products as any)?.products || []
+  );
 
   const searchResults = useMemo(() => {
     if (!query.trim()) return [];

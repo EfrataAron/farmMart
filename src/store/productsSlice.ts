@@ -1,22 +1,33 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import * as productData from '@/data/productData';
 
-interface Product {
-  id: string;
-  name: string;
+export interface Product {
+  id: number;
+  title: string;
+  subheading: string;
   price: number;
-  description?: string;
-  image?: string;
+  rating: number;
+  image: string;
   category?: string;
+  subcategory?: string;
+  inStock?: boolean;
+  description?: string;
   farmerId?: string;
 }
 
-interface ProductsState {
+export interface ProductsState {
   items: Product[];
   loading: boolean;
 }
 
+// Get all products from productData and add inStock property
+const allProducts = productData.allProductsData.map(product => ({
+  ...product,
+  inStock: true
+}));
+
 const initialState: ProductsState = {
-  items: [],
+  items: allProducts,
   loading: false,
 };
 
