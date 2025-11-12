@@ -1,4 +1,5 @@
 # FarmMart 🌾
+access our app on vercel at https://farmmart-xi.vercel.app/ 
 
 A modern agricultural e-commerce platform connecting farmers directly with buyers. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
