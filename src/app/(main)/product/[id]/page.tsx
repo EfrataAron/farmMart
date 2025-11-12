@@ -84,8 +84,11 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
   const { id } = use(params);
   const productId = Number(id);
   
-  // Get products from Redux store
-  const products = useSelector((state: RootState) => state.products.products);
+  // Get products from Redux store - handle both possible state structures
+  const products = useSelector((state: RootState) => {
+    const productsState = state.products as { items?: unknown[]; products?: unknown[] };
+    return (productsState?.items || productsState?.products || []) as typeof state.products.items;
+  });
   const product = products.find((p) => p.id === productId);
 
   // All hooks must be called before any return
@@ -109,7 +112,7 @@ export default function ProductDetailsPage({ params }: { params: Promise<{ id: s
       id: product.id,
       title: product.title,
       price: product.price,
-      unit: product.unit || 'kg',
+      unit: 'kg',
       image: product.image,
       quantity: quantity
     });

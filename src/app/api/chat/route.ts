@@ -32,7 +32,10 @@ Be friendly, concise, and helpful. Keep responses under 150 words. If asked abou
     ];
 
     const completion = await groq.chat.completions.create({
-      messages: messages as Array<{ role: string; content: string }>,
+      messages: messages.map(msg => ({
+        role: msg.role as 'system' | 'user' | 'assistant',
+        content: msg.content
+      })),
       model: 'llama-3.3-70b-versatile',
       temperature: 0.7,
       max_tokens: 300,

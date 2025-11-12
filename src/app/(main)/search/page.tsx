@@ -3,12 +3,12 @@
 import { useSearchParams } from 'next/navigation';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
-import { useMemo } from 'react';
+import { useMemo, Suspense } from 'react';
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi';
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
   const products = useSelector((state: RootState) => {
@@ -21,8 +21,8 @@ export default function SearchPage() {
     
     const lowerQuery = query.toLowerCase();
     return products.filter((product) => {
-      const matchesName = product.name?.toLowerCase().includes(lowerQuery);
-      const matchesDescription = product.description?.toLowerCase().includes(lowerQuery);
+      const matchesName = product.title?.toLowerCase().includes(lowerQuery);
+      const matchesDescription = product.subheading?.toLowerCase().includes(lowerQuery);
       const matchesCategory = product.category?.toLowerCase().includes(lowerQuery);
       
       return matchesName || matchesDescription || matchesCategory;
@@ -68,10 +68,10 @@ export default function SearchPage() {
               <ProductCard
                 id={Number(product.id)}
                 image={product.image || '/images/placeholder.png'}
-                title={product.name}
-                subheading={product.description || ''}
+                title={product.title}
+                subheading={product.subheading || ''}
                 price={product.price}
-                rating={4}
+                rating={product.rating || 4}
                 size="small"
               />
             </Link>
@@ -82,3 +82,14 @@ export default function SearchPage() {
   );
 }
 
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center">Loading search...</div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
+  );
+}
