@@ -162,7 +162,7 @@ export default function Header() {
                       item.name === "Products"
                         ? "/products/all"
                         : item.name === "Services"
-                        ? "/services"
+                        ? "/services/farm-consultation"
                         : "/blog"
                     }
                     className="flex items-center space-x-1 text-gray-700 hover:text-orange-600 font-medium focus:outline-none"
@@ -436,7 +436,7 @@ export default function Header() {
                         item.name === "Products"
                           ? "/products/all"
                           : item.name === "Services"
-                          ? "/services"
+                          ? "/services/farm-consultation"
                           : "/blog"
                       }
                       onClick={() => setIsMenuOpen(false)}
