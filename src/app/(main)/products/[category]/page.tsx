@@ -41,7 +41,11 @@ export default function CategoryPage({ params }: { params: Promise<{ category?: 
   const resolvedParams = use(params);
   const categorySlug = resolvedParams.category || 'all'; 
   const categoryName = categoryMapping[categorySlug];
-  const products = useSelector((state: RootState) => state.products.items) || [];
+  // Get products from Redux - handle both possible state structures
+  const products = useSelector((state: RootState) => {
+    const productsState = state.products as { items?: Product[]; products?: Product[] };
+    return productsState?.items || productsState?.products || [];
+  });
 
   // All hooks must be called before any conditional logic
   const [isFilterOpen, setIsFilterOpen] = useState(false);

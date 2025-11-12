@@ -9,7 +9,7 @@ const featuredProducts = [
   {
     id: 1,
     name: 'Organic Tomato Seeds',
-    image: '/images/seeds.png',
+    image: '/images/seeds.webp',
     originalPrice: 45,
     specialPrice: 32,
     discount: 30,

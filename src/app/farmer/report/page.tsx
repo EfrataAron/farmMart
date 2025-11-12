@@ -8,14 +8,12 @@ import {
   FiShoppingCart,
   FiDollarSign,
   FiPackage,
-  FiDownload,
   FiBarChart,
   FiPieChart,
   FiCheckCircle,
   FiClock,
   FiStar,
   FiMessageCircle,
-  FiChevronDown,
 } from "react-icons/fi";
 
 // Types (keeping the same as before)

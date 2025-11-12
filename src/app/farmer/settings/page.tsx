@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   FiSettings,
   FiShield,
-  FiDollarSign,
   FiBell,
   FiSave,
   FiAlertTriangle,
