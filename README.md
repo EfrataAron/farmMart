@@ -1,28 +1,28 @@
-# FarmMart 🌾
+# FarmMart 
 access our app on vercel at https://farmmart-xi.vercel.app/ 
 
 A modern agricultural e-commerce platform connecting farmers directly with buyers. Built with Next.js 15, TypeScript, and Tailwind CSS.
 
-## ✨ Features
+##  Features
 
 ### For Buyers
-- 🛒 **Shopping Cart & Wishlist** - Save and purchase products
-- 🔍 **Smart Search** - Find products quickly with advanced filtering
-- 💬 **AI Chatbot** - Get instant help with farming advice and product recommendations
-- 📊 **Price Trends** - Track historical crop prices to make informed decisions
-- 📅 **Crop Calendar** - View optimal planting and harvesting times
-- 👥 **Community Forum** - Connect with farmers and share knowledge
-- 📦 **Order Tracking** - Monitor your orders in real-time
+-  **Shopping Cart & Wishlist** - Save and purchase products
+-  **Smart Search** - Find products quickly with advanced filtering
+-  **AI Chatbot** - Get instant help with farming advice and product recommendations
+-  **Price Trends** - Track historical crop prices to make informed decisions
+-  **Crop Calendar** - View optimal planting and harvesting times
+-  **Community Forum** - Connect with farmers and share knowledge
+-  **Order Tracking** - Monitor your orders in real-time
 
 ### For Farmers
-- 📈 **Dashboard** - Comprehensive analytics and insights
-- 🌱 **Product Management** - Add, edit, and manage your products
-- 📊 **Reports** - Track sales, revenue, and performance
-- 💼 **Profile Management** - Showcase your farm and products
-- 📬 **Order Management** - Handle customer orders efficiently
-- ⚙️ **Settings** - Customize your preferences
+-  **Dashboard** - Comprehensive analytics and insights
+-  **Product Management** - Add, edit, and manage your products
+-  **Reports** - Track sales, revenue, and performance
+-  **Profile Management** - Showcase your farm and products
+-  **Order Management** - Handle customer orders efficiently
+-  **Settings** - Customize your preferences
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -54,7 +54,7 @@ npm run dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** Next.js 15.3.4
 - **Language:** TypeScript
@@ -65,7 +65,7 @@ npm run dev
 - **Forms:** React Hook Form
 - **AI Integration:** Groq SDK (Llama 3.3)
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 farmmart/
@@ -111,7 +111,7 @@ farmmart/
 └── README.md
 ```
 
-## 🎨 Key Features Explained
+##  Key Features Explained
 
 ### AI Chatbot
 Powered by Groq's Llama 3.3 model, the chatbot provides:
@@ -141,7 +141,7 @@ Connect and share:
 - Find buyers/suppliers
 - Category-based discussions
 
-## 🔧 Available Scripts
+##  Available Scripts
 
 ```bash
 npm run dev      # Start development server
@@ -151,24 +151,24 @@ npm run lint     # Run ESLint
 npm run lint:fix # Fix linting issues
 ```
 
-## 🌐 Environment Variables
+##  Environment Variables
 
 | Variable | Description | Required |
 |----------|-------------|----------|
 | `API_KEY_FARM` | Groq API key for AI chatbot | Yes |
 
-## 📝 License
+##  License
 
 This project is licensed under the MIT License.
 
-## 👥 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📧 Contact
+##  Contact
 
 For support or inquiries, reach out at support@farmmart.com
 
 ---
 
-Built with ❤️ for farmers and agricultural communities
+Built for farmers and agricultural communities
